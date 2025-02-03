@@ -1,1 +1,52 @@
+:root {
+    --deep-purple: #6E2CBF;
+    --dark-black: #0A0A0A;
+    --off-black: #1A1A1A;
+    --lavender: #BB86FC;
+    --dark-gray: #2C2C2C;
+    --light-gray: #E0E0E0;
+    --electric-purple: #9D4EDD;
+    --neon-pink: #FF00FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+body {
+    background-color: var(--dark-black);
+    color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--lavender);
+}
+
+a {
+    color: var(--electric-purple);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--neon-pink);
+}
+
+.navbar {
+    display: flex; /*turns navbar into flexbox container; easier to align items*/
+    justify-content: space-between; /* pushes left and right content to opposite ends of navbar*/
+    align-items: center; /* vertically centers the items inside the navbar*/
+    padding: 10px 20px;
+    background-color: var(--deep-purple);
+    color: white;
+}
+
+.navbar-left .name {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
 
