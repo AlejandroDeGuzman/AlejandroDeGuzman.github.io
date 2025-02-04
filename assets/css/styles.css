@@ -13,7 +13,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Fira Code', monospace;
 }
 
 body {
@@ -32,8 +34,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.links a:hover {
     color: var(--neon-pink);
+    background-color: var(--off-black);
 }
 
 .navbar {
@@ -46,7 +49,39 @@ a:hover {
 }
 
 .navbar-left .name {
+    padding: 5px;
     font-size: 2.5rem;
     font-weight: bold;
+    color: var(--neon-pink);
+    background-color: var(--off-black);
+}
+
+.links {
+    padding: 10px 30px;
+    background-color: var(--dark-gray);
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+ul li {
+    float: left
+}
+
+ul li a {
+    padding: 5px;
+    text-align: center;
+}
+
+.lebron {
+    padding: 10px;
+    max-width: 100%;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
 }
 
