@@ -34,45 +34,62 @@ a {
     text-decoration: none;
 }
 
-.links a:hover {
+a:hover {
     color: var(--neon-pink);
     background-color: var(--off-black);
 }
 
 .navbar {
     display: flex; /*turns navbar into flexbox container; easier to align items*/
-    justify-content: space-between; /* pushes left and right content to opposite ends of navbar*/
+    justify-content: space-between; 
     align-items: center; /* vertically centers the items inside the navbar*/
     padding: 10px 20px;
     background-color: var(--deep-purple);
     color: white;
 }
 
-.navbar-left .name {
-    padding: 5px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--neon-pink);
-    background-color: var(--off-black);
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-.links {
-    padding: 10px 30px;
+.navbar-left .name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-left {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar .subname {   
+    font-size: 1rem;
+    color: white;
+}
+
+#navlinks {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
     background-color: var(--dark-gray);
+    padding: 10px 20px;
+}
+
+#linkdiv {
+    padding: 4px;
+}
+
+#footer {
+    background-color: var(--deep-purple);
 }
 
 ul {
     list-style-type: none;
     overflow: hidden;
-}
-
-ul li {
-    float: left
-}
-
-ul li a {
-    padding: 5px;
-    text-align: center;
 }
 
 .lebron {
@@ -85,3 +102,10 @@ ul li a {
     display: block;
 }
 
+footer a {
+    color: white;
+}
+
+footer h3 {
+    color: white;
+}

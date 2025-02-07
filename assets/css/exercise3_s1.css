@@ -1,0 +1,24 @@
+.p1 {
+    background-color: pink;
+    color: blue;
+    font-family: sans-serif;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.p2 {
+    background-color: green;
+    color: white;
+    font-family: fantasy;
+    font-size: 14px;
+    padding: 10px;
+}
+/*.p1 {*/
+/*    font-family: Arial, sans-serif;*/
+/*    font-size: 16px;*/
+/*    color: #333;*/
+/*    line-height: 1.6;*/
+/*    background-color: #f9f9f9;*/
+/*    padding: 10px;*/
+/*    border-left: 4px solid #007BFF;*/
+/*}*/
