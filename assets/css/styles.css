@@ -41,7 +41,7 @@ a {
 
 .navbar {
     display: flex; /*turns navbar into flexbox container; easier to align items*/
-    justify-content: space-between; /* pushes left and right content to opposite ends of navbar*/
+    justify-content: space-between; 
     align-items: center; /* vertically centers the items inside the navbar*/
     padding: 10px 20px;
     background-color: var(--deep-purple);
@@ -49,11 +49,20 @@ a {
 }
 
 .navbar-left .name {
-    padding: 5px;
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--neon-pink);
-    background-color: var(--off-black);
+    color: white;
+}
+
+.navbar-left {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar .subname {   
+    font-size: 1rem;
+    color: white;
 }
 
 .links {
