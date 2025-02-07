@@ -34,7 +34,7 @@ a {
     text-decoration: none;
 }
 
-.links a:hover {
+a:hover {
     color: var(--neon-pink);
     background-color: var(--off-black);
 }
@@ -46,6 +46,12 @@ a {
     padding: 10px 20px;
     background-color: var(--deep-purple);
     color: white;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .navbar-left .name {
@@ -65,23 +71,25 @@ a {
     color: white;
 }
 
-.links {
-    padding: 10px 30px;
+#navlinks {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
     background-color: var(--dark-gray);
+    padding: 10px 20px;
+}
+
+#linkdiv {
+    padding: 4px;
+}
+
+#footer {
+    background-color: var(--deep-purple);
 }
 
 ul {
     list-style-type: none;
     overflow: hidden;
-}
-
-ul li {
-    float: left
-}
-
-ul li a {
-    padding: 5px;
-    text-align: center;
 }
 
 .lebron {
@@ -94,3 +102,10 @@ ul li a {
     display: block;
 }
 
+footer a {
+    color: white;
+}
+
+footer h3 {
+    color: white;
+}
