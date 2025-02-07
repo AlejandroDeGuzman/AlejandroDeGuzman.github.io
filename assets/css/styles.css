@@ -1,0 +1,87 @@
+:root {
+    --deep-purple: #6E2CBF;
+    --dark-black: #0A0A0A;
+    --off-black: #1A1A1A;
+    --lavender: #BB86FC;
+    --dark-gray: #2C2C2C;
+    --light-gray: #E0E0E0;
+    --electric-purple: #9D4EDD;
+    --neon-pink: #FF00FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background-color: var(--dark-black);
+    color: var(--light-gray);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: var(--lavender);
+}
+
+a {
+    color: var(--electric-purple);
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--neon-pink);
+    background-color: var(--off-black);
+}
+
+.navbar {
+    display: flex; /*turns navbar into flexbox container; easier to align items*/
+    justify-content: space-between; /* pushes left and right content to opposite ends of navbar*/
+    align-items: center; /* vertically centers the items inside the navbar*/
+    padding: 10px 20px;
+    background-color: var(--deep-purple);
+    color: white;
+}
+
+.navbar-left .name {
+    padding: 5px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--neon-pink);
+    background-color: var(--off-black);
+}
+
+.links {
+    padding: 10px 30px;
+    background-color: var(--dark-gray);
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+ul li {
+    float: left
+}
+
+ul li a {
+    padding: 5px;
+    text-align: center;
+}
+
+.lebron {
+    padding: 10px;
+    max-width: 100%;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+}
+
