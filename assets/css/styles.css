@@ -18,6 +18,19 @@
     font-family: 'Fira Code', monospace;
 }
 
+html, body {
+    height: 100%;
+}
+
+#container {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+}
+
+
 body {
     background-color: var(--dark-black);
     color: var(--light-gray);
@@ -108,4 +121,14 @@ footer a {
 
 footer h3 {
     color: white;
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: relative;
+}
+
+#hobbies {
+    padding: 0px 30px ;
 }
