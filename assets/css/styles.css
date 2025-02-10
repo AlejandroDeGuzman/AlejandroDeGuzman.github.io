@@ -61,6 +61,7 @@ a:hover {
     color: white;
 }
 
+/*flexbox container for column items*/
 .flex-container{
     display: flex;
     flex-direction: column;
@@ -105,14 +106,14 @@ ul {
     overflow: hidden;
 }
 
-.lebron {
-    padding: 10px;
+/*lebron picture*/
+#lebron {
+    padding: 5px;
     max-width: 100%;
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 50%;
     object-fit: cover;
     margin: auto;
-    display: block;
     border: 3pt solid var(--deep-purple);
 }
 
@@ -132,4 +133,33 @@ footer h3 {
 
 #hobbies {
     padding: 0px 30px ;
+    width: 75vw;
+    height: 100px;
 }
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    padding: 2.5%;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin: 0 auto;
+    /*flex-wrap: wrap;*/.
+}
+
+.text-container {
+    width: 75%;
+    margin: 0;
+}
+
+/*#about-me {*/
+/*    /*width: 20%;*/*/
+/*    /*height: 20%;*/*/
+/*    width: 150%;*/
+/*}*/
+
+/*#about-me {*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*}*/
