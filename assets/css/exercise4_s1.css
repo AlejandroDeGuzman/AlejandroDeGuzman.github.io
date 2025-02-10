@@ -1,0 +1,46 @@
+body {
+    background-color: Aquamarine; 
+}
+
+/*header (top part of the page)*/
+
+#div-header {
+    background-color: beige;
+}
+
+#header-name {
+    background-color: BlanchedAlmond;
+    padding: 10px;
+}
+
+.links {
+    padding: 0 10px;
+}
+
+.links a {
+    padding: 10px 10px;
+}
+
+.links a:hover {
+    background-color: Azure;
+}
+
+/*content container*/
+#content-container {
+    padding: 10px;
+    background-color: white;
+}
+
+#lebron {
+    height: 100%;
+    width: 50%;
+    border: 3pt solid black;
+    padding: 5px;
+}
+
+/*footer*/
+#div-footer {
+    padding: 10px;
+    background-color: BlanchedAlmond;
+    text-align: center;
+}
