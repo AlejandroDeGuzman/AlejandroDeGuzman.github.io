@@ -113,6 +113,7 @@ ul {
     object-fit: cover;
     margin: auto;
     display: block;
+    border: 3pt solid var(--deep-purple);
 }
 
 footer a {
