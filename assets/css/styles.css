@@ -1,3 +1,4 @@
+/*global colourscheme I am going to use*/
 :root {
     --deep-purple: #6E2CBF;
     --dark-black: #0A0A0A;
@@ -9,6 +10,7 @@
     --neon-pink: #FF00FF;
 }
 
+/*resetting any type of formatting*/
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +20,6 @@
     font-family: 'Fira Code', monospace;
 }
 
-html, body {
-    height: 100%;
-}
 
 #container {
     min-height: 100%;
@@ -30,7 +29,7 @@ html, body {
     overflow: auto;
 }
 
-
+/*setting main backgroud up*/
 body {
     background-color: var(--dark-black);
     color: var(--light-gray);
@@ -42,6 +41,7 @@ h1, h2, h3 {
     color: var(--lavender);
 }
 
+/*links and references styling*/
 a {
     color: var(--electric-purple);
     text-decoration: none;
@@ -52,6 +52,7 @@ a:hover {
     background-color: var(--off-black);
 }
 
+/*navbar customisation (basically the header)*/
 .navbar {
     display: flex; /*turns navbar into flexbox container; easier to align items*/
     justify-content: space-between; 
@@ -59,13 +60,6 @@ a:hover {
     padding: 10px 20px;
     background-color: var(--deep-purple);
     color: white;
-}
-
-/*flexbox container for column items*/
-.flex-container{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
 }
 
 .navbar-left .name {
@@ -93,8 +87,15 @@ a:hover {
     padding: 10px 20px;
 }
 
-#linkdiv {
+.linkdiv {
     padding: 4px;
+}
+
+/*flexbox container for column items*/
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 #footer {
@@ -152,14 +153,3 @@ footer h3 {
     width: 75%;
     margin: 0;
 }
-
-/*#about-me {*/
-/*    /*width: 20%;*/*/
-/*    /*height: 20%;*/*/
-/*    width: 150%;*/
-/*}*/
-
-/*#about-me {*/
-/*    flex-direction: row;*/
-/*    justify-content: space-between;*/
-/*}*/
