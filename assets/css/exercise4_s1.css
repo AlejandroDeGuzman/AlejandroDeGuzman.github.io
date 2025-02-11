@@ -3,12 +3,12 @@ body {
 }
 
 /*header (top part of the page)*/
-
 #div-header {
     background-color: beige;
 }
 
 #header-name {
+    font-size: 250%;
     background-color: BlanchedAlmond;
     padding: 10px;
 }
@@ -19,6 +19,7 @@ body {
 
 .links a {
     padding: 10px 10px;
+    font-size: 125%;
 }
 
 .links a:hover {
@@ -35,7 +36,7 @@ body {
     height: 100%;
     width: 50%;
     border: 3pt solid black;
-    padding: 5px;
+    padding: 1%; 
 }
 
 /*footer*/
