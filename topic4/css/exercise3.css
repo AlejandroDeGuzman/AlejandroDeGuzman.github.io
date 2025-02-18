@@ -1,0 +1,35 @@
+caption{
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: silver;
+    padding: 5px;
+}
+
+table{
+    border: solid 1pt #027f7e;
+    background-color: lightgray;
+    float: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+th,td{
+    border: solid 1pt gray;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background-color: orange;
+}
+
+tbody{
+    background-color: white;
+}
+tfoot td{
+    border-collapse: collapse;
+    background-color: lightgray;
+}
+
+.blank {
+    background-color: grey;
+}

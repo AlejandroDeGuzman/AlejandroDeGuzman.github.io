@@ -1,0 +1,80 @@
+caption{
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #027f7e;
+    padding: 5px;
+}
+
+table{
+    border: solid 1pt #027f7e;
+    background-color: lightgray;
+}
+th,td{
+    border: solid 1pt gray;
+    border-collapse: collapse;
+    text-align: center;
+}
+tbody{
+    background-color: white;
+}
+tfoot td{
+    border-collapse: collapse;
+    background-color: lightgray;
+}
+
+img {
+    border-radius: 5px;
+}
+
+#film1 {
+    width: 50%;
+}
+
+#film2 {
+    width: 50%;
+}
+
+#film3 {
+    width: 50%;
+}
+
+#film4 {
+    width: 50%;
+}
+
+#film5 {
+    width: 50%;
+}
+
+#actor1 {
+    width: 50%;
+}
+
+#actor2 {
+    width: 100%;
+}
+
+#actor3 {
+    width: 60%;
+}
+
+#actor4 {
+    width: 55%;
+}
+
+#actor5 {
+    width: 50%;
+}
+
+#actor6 {
+    width: 90%;
+}
+
+#actor7 {
+    width: 80%;
+}
+
+#actor8 {
+    width: 80%;
+}
+

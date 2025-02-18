@@ -1,0 +1,37 @@
+legend {
+    background-color: green;
+    padding: 0px 25%; 
+    font-size: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+}
+
+#main {
+    background-color: MediumSeaGreen;
+}
+
+footer {
+    background-color: white;
+    padding: 10px;
+}
+
+button {
+    background-color: green;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    align: center;
+}
+
+div {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} 
+
