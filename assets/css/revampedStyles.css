@@ -31,6 +31,47 @@ section {
     box-sizing: border-box;
 }
 
+/*navbar css*/
+#navbar #think {
+    font-size: 1rem;
+    color: var(--gray-700);
+}
+
+#navbar {
+    position: fixed;
+    bottom: 0;
+    /*top: 0;*/
+    background-color: var(--primary-light);
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a,
+#navbar #thinking p
+{
+    float: left;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--gray-700);
+    padding: 15px 10px;
+    display: block;
+}
+
+#navbar ul li a:hover {
+    background-color: var(--gray-700);
+    color: var(--primary-light);
+}
+
+/*section one css (intro/starting section)*/
 #one h1 {
     color: var(--primary-light);
     font-size: 3rem;
@@ -51,39 +92,16 @@ section {
     transform: translateY(-50%);
 }
 
-#one #think {
-    font-size: 1rem;
-}
-
 .flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*background-color: var(--accent-400);*/
     /*padding: 2.5%;*/
 }
 
-.flex-container-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 15px 25px;
-}
-
-#navbar {
-    position: sticky;
-    top: 0;
-    overflow: hidden;
-    /*background-color: var(--primary-light);*/
-}
-
-#navbar a {
-    float: left;
-    text-align: center;
-    color: var(--primary-light);
-    padding: 10px;
-}
-
+/*section two (about me section)*/
 #two {
     background-color: var(--gray-100);
 }
