@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Fira Code', monospace;
+}
+
+:root {
+    /* Color Scheme */
+    --primary-dark: #0a0a0a;       /* Rich black */
+    --primary-light: #ffffff;     /* Pure white */
+    --gray-900: #1a1a1a;          /* Dark gray */
+    --gray-700: #404040;         /* Medium-dark gray */
+    --gray-300: #d4d4d4;          /* Light gray */
+    --gray-100: #f5f5f5;          /* Off-white gray */
+    --accent-400: #7c3aed;       /* Medium purple */
+    --accent-100: #f5f3ff;        /* Very light purple */
+}
+
+html, body {
+    background: var(--gray-900);
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*navbar css*/
+#navbar #think {
+    font-size: 1rem;
+    color: var(--gray-700);
+}
+
+#navbar {
+    position: fixed;
+    bottom: 0;
+    /*top: 0;*/
+    background-color: var(--primary-light);
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a,
+#navbar #thinking p
+{
+    float: left;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--gray-700);
+    padding: 15px 10px;
+    display: block;
+}
+
+#navbar ul li a:hover {
+    background-color: var(--gray-700);
+    color: var(--primary-light);
+}
+
+/*section one css (intro/starting section)*/
+#one h1 {
+    color: var(--primary-light);
+    font-size: 3rem;
+    letter-spacing: 5px; 
+    padding: 2px 0px;
+}
+
+#one p {
+    color: var(--gray-700);
+    font-size: 1.5rem;
+}
+
+#text-content {
+    padding: 10%;
+    top: 46.5%;
+    position: absolute;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background-color: var(--accent-400);*/
+    /*padding: 2.5%;*/
+}
+
+/*section two (about me section)*/
+#two {
+    background-color: var(--gray-100);
+}
+
+#three {
+    background-color: var(--gray-300);
+}
