@@ -32,15 +32,9 @@ section {
 }
 
 /*navbar css*/
-#navbar #think {
-    font-size: 1rem;
-    color: var(--gray-700);
-}
-
 #navbar {
     position: fixed;
     bottom: 0;
-    /*top: 0;*/
     background-color: var(--primary-light);
 }
 
@@ -52,14 +46,13 @@ section {
 }
 
 #navbar ul li {
-    float: left;
+    float: right;
 }
 
 #navbar ul li a,
 #navbar #thinking p
 {
-    float: left;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
     color: var(--gray-700);
     padding: 15px 10px;
@@ -85,7 +78,7 @@ section {
 }
 
 #text-content-one {
-    padding: 10%;
+    padding: 5%;
     top: 46.5%;
     position: absolute;
     margin: 0;
@@ -108,7 +101,7 @@ section {
 
 #text-content-two {
     padding: 10%;
-    top: 150.5%;
+    top: 150%;
     position: absolute;
     margin: 0;
     transform: translateY(-50%);
@@ -116,6 +109,16 @@ section {
 
 #two h1 {
     font-size: 2rem;
+}
+
+#two code {
+    width: 100%;
+}
+
+#two #div-code {
+    background-color: var(--gray-300);
+    margin: 0;
+    padding: 20px 20px;
 }
 
 /*section three*/
