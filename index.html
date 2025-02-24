@@ -8,27 +8,41 @@
         <title>
             Portfolio Website
         </title>
-        <link href="assets/css/revampedStyles.css" rel="stylesheet">
+        <link href="./assets/css/normal.css" rel="stylesheet">
+        <link href="./assets/css/mobile.css" media="screen and (max-width:500px)" rel="stylesheet">
+        <link href="./assets/css/mobile.css" media="screen and (max-width:500px)" rel="stylesheet">
+        <link href="./assets/css/tablet.css" media="screen and (min-width:501px) and (max-width:768px)" rel="stylesheet">
+
+        <!-- for the hamburger icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <!-- CDN setup for highlight.js module for code syntax highlighting -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
     </head>
     <body>
 
         <!-- navbar -->
-        <div id="navbar">
-            <ul>
-                <li><a href="">about me.</a></li> 
-                <li><a href="">projects.</a></li> 
-                <li><a href="">contact.</a></li> 
-                <li><a href="">links.</a></li> 
-                <li id="thinking" style=""><p>(thinking...)</p></li>
-            </ul>
-        </div>
-        
+        <nav>
+            <label class="logo">:)</label>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+           <ul>
+                <li><a href="#two">about me.</a></li>
+                <li><a href="">contact.</a></li>
+                <li><a href="">links.</a></li>
+                <li><a href="#three">projects.</a></li>
+            </ul> 
+        </nav>
+
         <!-- intro section -->
         <section id="one">
             <header>
                 <div class="flex-container">
-                    <div id="text-content">
-                        <p>hello, I'm</p>
+                    <div id="text-content-one">
                         <h1>&lt;Alejandro De Guzman&gt;</h1>
                         <p>(developer/student)</p>
                     </div>
@@ -38,12 +52,52 @@
 
         <!-- about me section -->
         <section id="two">
-            <p>Section 2</p>
+            <div class="flex-container">
+                <div id="text-content-two">
+                    <div>
+                        <h3>Hello!</h3>
+                        <h1>I'm Alejandro De Guzman,</h1>
+                        <p id="short-intro">an <strong>Undergraduate</strong> Computer Science Student at QMUL based in London.</p>
+                    </div> 
+                    <div id="code-snippet">
+                        <pre>
+<code class="language-java">String[] hobbies = {"bouldering", "origami", "football", "gym", "running"}; 
+String[] languages = {"python", "java", "javascript", "SQL"}; 
+String[] technologies = { 
+         "planckJS",  
+         "pixiJS",  
+         "Pygame",  
+         "Pandas",  
+         "Bootstrap", 
+         "Redis", 
+         "MongoDB" 
+     }; </code>
+                        </pre>    
+                    </div>
+                    <p>Take a look at my code on <a href="https://github.com/3NJDGZ">GitHub</a>, and connect with me on <a href="https://www.linkedin.com/in/alejandro-de-guzman/">LinkedIn</a>!</p>
+                </div>
+            </div>
         </section>
 
         <!-- projects/achievements section -->
         <section id="three">
-            <p>Section 3</p>
+            <div class="flex-container">
+                <div>
+                    <p>Project One</p>
+                </div> 
+                <div>
+                    <p>Project Two</p>
+                </div>
+                <div>
+                    <p>Project Three</p>
+                </div>
+            </div>
         </section>
+
+        <!-- this is used for the code highlighting -->
+        <script>
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        </script>
     </body>
 </html>
