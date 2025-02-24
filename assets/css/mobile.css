@@ -34,7 +34,7 @@ section {
 
 /*navbar css*/
 nav {
-    z-index: 1000;
+    z-index: 1000;  /* z index set to highest priority so that it will always stay on top */
     position: fixed;
     width: 100%;
     top: 0;
@@ -51,14 +51,14 @@ nav ul {
     list-style: none;
     position: fixed;
     top: 45px;
-    right: -100%;
+    right: -100%; /* set initially to be off screen to the right (out of sight) */
     width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
+    transition: all 0.3s; /* enables smooth transitions for all changing css properties */
 }
 
 .logo {
@@ -73,7 +73,6 @@ nav a {
 
 .checkbtn {
     display: block;
-    order: 1;
 }
 
 #check {
