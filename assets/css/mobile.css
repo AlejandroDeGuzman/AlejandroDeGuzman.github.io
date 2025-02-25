@@ -168,13 +168,13 @@ nav a {
     background-color: var(--gray-100);
 }
 
-#projectOne {
+.project {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-    margin-top: 20%;
+    margin-top: 15%;
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
@@ -223,4 +223,8 @@ nav a {
     width: 80%;
     border-radius: 10px;
     border: 2px solid black;
+}
+
+#project-two {
+    margin-top: -5px;
 }
