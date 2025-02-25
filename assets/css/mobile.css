@@ -248,4 +248,14 @@ nav a {
 
 #project-three {
     margin-top: -5px;
-} 
+}
+
+#mazeMindImg {
+    width: 75%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#project-three .project-content {
+    flex-direction: column;
+}
