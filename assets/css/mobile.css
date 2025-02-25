@@ -124,12 +124,19 @@ nav a {
 }
 
 #text-content-two {
+    /*background-color: indigo;*/
     padding: 10%;
     top: 150%;
     position: absolute;
     margin: 0;
     transform: translateY(-50%);
 }
+
+@media only screen and (max-width: 375px) {
+    #text-content-two div h3 {
+        margin-top: 20%;
+    }
+} 
 
 #two h1 {
     font-size: 1.25rem;
@@ -258,4 +265,18 @@ nav a {
 
 #project-three .project-content {
     flex-direction: column;
+}
+
+#project-four {
+    margin-top: -5px;
+}
+
+#project-four .project-content {
+    flex-direction: column;
+}
+
+#portfolioImg {
+    width: 75%;
+    border-radius: 10px;
+    border: 2px solid black; 
 }
