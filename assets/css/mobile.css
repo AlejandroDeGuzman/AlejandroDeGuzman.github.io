@@ -132,7 +132,7 @@ nav a {
     transform: translateY(-50%);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) and (max-height: 667px) {
     #text-content-two div h3 {
         margin-top: 20%;
     }
@@ -144,6 +144,7 @@ nav a {
 }
 
 #two h3 {
+    margin-top: -25%;
     font-size: 0.8rem;
 }
 
