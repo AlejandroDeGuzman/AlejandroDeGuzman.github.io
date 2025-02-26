@@ -309,10 +309,10 @@ nav a {
 }
 
 #contact-form-div {
-    /*background-color: var(--accent-400);*/
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+    /*background-color: indigo;*/
 }
 
 #contact-form-div h3 {
@@ -330,7 +330,6 @@ form {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
 
 textarea {
@@ -340,14 +339,16 @@ textarea {
     border: 2px solid var(--accent-400);
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 input {
     border: 2px solid var(--accent-400);
     padding: 12px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     background-color: var(--gray-300);
     width: 75%;
 }
@@ -364,7 +365,7 @@ input {
 }
 
 #contact-info p {
-    font-size: 0.715rem;
+    font-size: 0.7rem;
 }
 
 /*section 5 (footer stuff)*/
