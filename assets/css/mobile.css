@@ -99,6 +99,7 @@ nav a {
 #one {
     background-color: var(--primary-dark);
 }
+
 #one h1 {
     color: var(--primary-light);
     font-size: 2rem;
@@ -156,7 +157,7 @@ nav a {
 }
 
 #two h3 {
-    margin-top: -20px;
+    /*margin-top: -20px;*/
     font-size: 0.8rem;
 }
 
@@ -346,4 +347,19 @@ input {
     margin-bottom: 20px;
     background-color: var(--gray-300);
     width: 75%;
+}
+
+#contact-info {
+    background-color: var(--primary-light);
+    padding: 10px;
+    /*margin: 20px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-left: 5px solid var(--accent-400);
+    border-radius: 10px;
+}
+
+#contact-info p {
+    font-size: 0.715rem;
 }
