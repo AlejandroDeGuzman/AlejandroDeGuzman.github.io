@@ -378,12 +378,16 @@ input {
     width: 30px;
 }
 
-#five div {
-    padding-top: 15px;
+#five #social-icons-div {
+    padding-top: 25px;
     /*display: flex;*/
-    /*flex-direction: row;*/
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /*background-color: indigo;*/
+}
+
+#five #social-icons-div a {
+    text-decoration: none;
 }
 
 #five div p {
