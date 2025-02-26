@@ -31,6 +31,8 @@
     --background-soft-light: #f3f4f6; /* Soft light for contrast */
 }
 
+/*css animations/transitions*/
+
 html, body {
     background: var(--gray-100);
     height: 100%;
@@ -303,7 +305,7 @@ nav a {
 /*section 4, contact form*/
 #four {
     background-color: var(--gray-100);
-    height: 900px;
+    height: 975px;
 }
 
 #contact-form-div {
@@ -387,3 +389,5 @@ input {
 #five div p {
     color: white;
 }
+
+
