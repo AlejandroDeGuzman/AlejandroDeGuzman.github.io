@@ -395,4 +395,16 @@ input {
     color: white;
 }
 
+/*blog css*/
+
+#blog-container {
+    margin-top: 70px;
+    /*background-color: indigo;*/
+    display: flex;
+    justify-content: center;
+}
+
+#blog-section {
+    height: 800px;
+}
 
