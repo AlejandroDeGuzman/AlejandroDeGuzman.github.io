@@ -17,6 +17,18 @@
     --gray-100: #f5f5f5;          /* Off-white gray */
     --accent-400: #7c3aed;       /* Medium purple */
     --accent-100: #f5f3ff;        /* Very light purple */
+
+    /* Additional Background Colors */
+    --background-dark: #0d0d0d;   /* Slightly lighter than primary-dark */
+    --background-light: #fafafa;  /* Slightly off-white */
+    --background-accent: #e0e7ff; /* Light blue with a hint of purple */
+    --background-warm: #fff7ed;   /* Warm off-white */
+    --background-cool: #f0f4ff;   /* Cool off-white */
+    --background-neutral: #f8fafc;/* Neutral off-white */
+    --background-highlight: #ede9fe;/* Light purple for highlighting sections */
+    --background-subtle: #e5e7eb; /* Subtle gray for secondary sections */
+    --background-soft-dark: #1e1e1e; /* Soft dark for contrast */
+    --background-soft-light: #f3f4f6; /* Soft light for contrast */
 }
 
 html, body {
@@ -87,6 +99,7 @@ nav a {
 #one {
     background-color: var(--primary-dark);
 }
+
 #one h1 {
     color: var(--primary-light);
     font-size: 2rem;
@@ -144,7 +157,7 @@ nav a {
 }
 
 #two h3 {
-    margin-top: -20px;
+    /*margin-top: -20px;*/
     font-size: 0.8rem;
 }
 
@@ -177,7 +190,12 @@ nav a {
 /*section three*/
 #three {
     background-color: var(--gray-100);
+    height: 1575px;
 }
+
+#three .flex-container h2 {
+    margin-top: 60px;
+} 
 
 .project {
     display: flex;
@@ -185,7 +203,7 @@ nav a {
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-    margin-top: 15%;
+    /*margin-top: 15%;*/
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
@@ -280,4 +298,68 @@ nav a {
     width: 75%;
     border-radius: 10px;
     border: 2px solid black; 
+}
+
+/*section 4, contact form*/
+#four {
+    background-color: var(--gray-100);
+}
+
+#contact-form-div {
+    /*background-color: var(--accent-400);*/
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form-div h3 {
+    text-align: center;
+    /*background-color: var(--accent-400);*/
+    padding-top: 20px;
+}
+
+form {
+    border-left: 5px solid var(--accent-400);
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+textarea {
+    width: 90%;
+    height: 300px;
+    background-color: var(--gray-300);
+    border: 2px solid var(--accent-400);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    border: 2px solid var(--accent-400);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: var(--gray-300);
+    width: 75%;
+}
+
+#contact-info {
+    background-color: var(--primary-light);
+    padding: 10px;
+    /*margin: 20px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-left: 5px solid var(--accent-400);
+    border-radius: 10px;
+}
+
+#contact-info p {
+    font-size: 0.715rem;
 }

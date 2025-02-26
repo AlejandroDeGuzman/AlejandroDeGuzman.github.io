@@ -25,14 +25,14 @@
 
         <!-- navbar -->
         <nav>
-            <label class="logo">:)</label>
+            <label class="logo">(./)</label>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
             </label>
            <ul>
                 <li><a href="#two">about me.</a></li>
-                <li><a href="">contact.</a></li>
+                <li><a href="#four">contact.</a></li>
                 <li><a href="">links.</a></li>
                 <li><a href="#three">projects.</a></li>
             </ul> 
@@ -82,6 +82,7 @@ String[] technologies = {
         <!-- projects/achievements section -->
         <section id="three">
             <div class="flex-container">
+                <h2>(projects.)</h2>
                 <div class="project">
                     <div class="project-content">
                         <div class="project-title">
@@ -174,6 +175,26 @@ String[] technologies = {
                         </ul>
                     </div>    
                 </div>
+            </div>
+        </section>
+
+        <section id="four">
+            <div id="contact-form-div">
+                <h3>(contact me.)</h3>
+                <div id="contact-info">
+                    <p>(email.) alejandrodeguzman@proton.me</p>
+                    <p>(tel.) 447853422545</p>
+                </div>
+                <form>
+                    <input type="text" id="fname" name="firstname" placeholder="Your first name">
+                    <br>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name">
+                    <br>
+                    <input type="email" id="email" name="email" placeholder="Your email">   
+                    <textarea id="message" name="message" placeholder="Write a message..." style="height=200px"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form> 
             </div>
         </section>
 
