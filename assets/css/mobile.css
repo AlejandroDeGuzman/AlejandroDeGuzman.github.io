@@ -337,14 +337,14 @@ textarea {
     border: 2px solid var(--accent-400);
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 input {
     border: 2px solid var(--accent-400);
     padding: 12px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background-color: var(--gray-300);
     width: 75%;
 }
