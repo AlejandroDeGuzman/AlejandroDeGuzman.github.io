@@ -17,18 +17,6 @@
     --gray-100: #f5f5f5;          /* Off-white gray */
     --accent-400: #7c3aed;       /* Medium purple */
     --accent-100: #f5f3ff;        /* Very light purple */
-
-    /* Additional Background Colors */
-    --background-dark: #0d0d0d;   /* Slightly lighter than primary-dark */
-    --background-light: #fafafa;  /* Slightly off-white */
-    --background-accent: #e0e7ff; /* Light blue with a hint of purple */
-    --background-warm: #fff7ed;   /* Warm off-white */
-    --background-cool: #f0f4ff;   /* Cool off-white */
-    --background-neutral: #f8fafc;/* Neutral off-white */
-    --background-highlight: #ede9fe;/* Light purple for highlighting sections */
-    --background-subtle: #e5e7eb; /* Subtle gray for secondary sections */
-    --background-soft-dark: #1e1e1e; /* Soft dark for contrast */
-    --background-soft-light: #f3f4f6; /* Soft light for contrast */
 }
 
 /*css animations/transitions*/
@@ -118,7 +106,7 @@ nav a {
 
 #text-content-one {
     padding: 5%;
-    top: 46.5%;
+    top: 50%;
     position: absolute;
     margin: 0;
     transform: translateY(-50%);
@@ -136,6 +124,7 @@ nav a {
 /*section two (about me section)*/
 #two {
     background-color: var(--gray-100);
+    /*background-color: AliceBlue;*/
 }
 
 #text-content-two {
@@ -192,7 +181,9 @@ nav a {
 /*section three*/
 #three {
     background-color: var(--gray-100);
-    height: 1575px;
+    /*background-color: Aqua;*/
+    height: 1650px;
+    box-sizing: border-box;
 }
 
 #three .flex-container h2 {
@@ -205,11 +196,9 @@ nav a {
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-    /*margin-top: 15%;*/
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
-    /*padding-top: 75px;*/
     border-left: 5px solid var(--accent-400);
     text-align: center;
 }
@@ -305,6 +294,7 @@ nav a {
 /*section 4, contact form*/
 #four {
     background-color: var(--gray-100);
+    /*background-color: indigo;*/
     height: 975px;
 }
 
@@ -318,7 +308,7 @@ nav a {
 #contact-form-div h3 {
     text-align: center;
     /*background-color: var(--accent-400);*/
-    padding-top: 20px;
+    /*padding-top: 20px;*/
 }
 
 form {
