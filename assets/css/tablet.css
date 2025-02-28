@@ -122,15 +122,17 @@ nav a {
 /*section two (about me section)*/
 #two {
     background-color: var(--gray-100);
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 #text-content-two {
     /*background-color: indigo;*/
-    padding: 10%;
+    padding: 5%;
     top: 150%;
     position: absolute;
     margin: 0;
-    transform: translateY(-50%);
+    transform: translateY(-30%);
 }
 
 @media only screen and (max-width: 375px) and (max-height: 667px) {
@@ -419,3 +421,8 @@ input {
     height: 800px;
 }
 
+/*login section*/
+
+#login-section {
+    margin-bottom: 10%;
+}

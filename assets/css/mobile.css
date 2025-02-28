@@ -124,7 +124,9 @@ nav a {
 /*section two (about me section)*/
 #two {
     background-color: var(--gray-100);
-    /*background-color: AliceBlue;*/
+    /*background-color: indigo;*/
+    margin-bottom: 10%;
+    margin-top: 10%;
 }
 
 #text-content-two {
@@ -133,7 +135,7 @@ nav a {
     top: 150%;
     position: absolute;
     margin: 0;
-    transform: translateY(-50%);
+    transform: translateY(-40%);
 }
 
 @media only screen and (max-width: 375px) and (max-height: 667px) {
