@@ -19,18 +19,21 @@
     --accent-100: #f5f3ff;        /* Very light purple */
 }
 
+/*css animations/transitions*/
 
 html, body {
     background: var(--gray-100);
     height: 100%;
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 section {
-    height: 100%;
+    /*height: 100vh;*/
+    min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
+    padding: 2rem 1rem;
 }
 
 /*navbar css*/
@@ -51,7 +54,7 @@ nav ul {
     background-color: white;
     list-style: none;
     position: fixed;
-    top: 45px;
+    top: 30px;
     right: -100%; /* set initially to be off screen to the right (out of sight) */
     width: 100%;
     height: 200px;
@@ -104,7 +107,6 @@ nav a {
 }
 
 #text-content-one {
-    /*background-color: indigo; */
     padding: 5%;
     top: 50%;
     position: absolute;
@@ -117,37 +119,31 @@ nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 /*section two (about me section)*/
 #two {
+    /*turn section into flexbox so can center everything*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
     background-color: var(--gray-100);
-    margin-top: 10%;
-    margin-bottom: 10%;
 }
 
 #text-content-two {
-    /*background-color: indigo;*/
-    padding: 5%;
-    top: 150%;
-    position: absolute;
-    margin: 0;
-    transform: translateY(-30%);
+    position: relative;
+    top: auto;
+    padding: 1rem;
 }
-
-@media only screen and (max-width: 375px) and (max-height: 667px) {
-    #text-content-two div h3 {
-        margin-top: 20%;
-    }
-} 
 
 #two h1 {
     font-size: 1.25rem;
-    padding: 3px 0px;
 }
 
 #two h3 {
-    /*margin-top: -20px;*/
     font-size: 0.8rem;
 }
 
@@ -155,37 +151,24 @@ nav a {
     overflow-x: auto; /* this allows horizontal scrolling */
     white-space: pre-wrap; /* preserves whitespace and wraps text */
     word-wrap: break-word; /* breaks long words if required */
-    /*background-color: var(--accent-400);*/
 }
 
 #two code {
     font-size: 0.7rem;
-    /*border-style: solid;*/
-    /*border-width: 2px 2px;*/
     border-radius: 10px;
     background-color: var(--primary-light);
     border-left: 5px solid var(--accent-400);
 }
 
 #two p {
-    /*background-color: var(--accent-400);*/
     font-size: 0.8rem;
-}
-
-#two #short-intro {
-    /*background-color: var(--accent-400);*/
-    padding-bottom: 20px;
 }
 
 /*section three*/
 #three {
-    background-color: var(--gray-100);
-    height: 1650px;
+    min-height: auto; /* wraps all the project cards into the section... */
+    box-sizing: border-box;
 }
-
-#three .flex-container h2 {
-    margin-top: 60px;
-} 
 
 .project {
     display: flex;
@@ -193,11 +176,9 @@ nav a {
     justify-content: space-between;
     align-items: center;
     margin: 20px;
-    /*margin-top: 15%;*/
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
-    /*padding-top: 75px;*/
     border-left: 5px solid var(--accent-400);
     text-align: center;
 }
@@ -291,47 +272,17 @@ nav a {
 }
 
 /*section 4, contact form*/
-
-@media only screen and (min-width: 700px) {
-    #four {
-        margin-top: 400px;
-        /*background-color: indigo;*/
-    }
-}
-
-@media only screen and (max-width: 699px) and (min-width: 630px) {
-    #four {
-        margin-top: 300px;
-    }
-}
-
-@media only screen and (max-width: 629px) and (min-width: 570px) {
-    #four {
-        margin-top: 200px;
-    }
-}
-
-@media only screen and (max-width: 569px) and (min-width: 501px) {
-    #four {
-        margin-top: 100px;
-    }
-}
-
 #four {
-    height: 975px;
+    height: auto;
 }
 
 #contact-form-div {
-    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    /*background-color: indigo;*/
 }
 
 #contact-form-div h3 {
     text-align: center;
-    /*background-color: var(--accent-400);*/
-    padding-top: 20px;
 }
 
 form {
@@ -369,7 +320,6 @@ input {
 #contact-info {
     background-color: var(--primary-light);
     padding: 10px;
-    /*margin: 20px;*/
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 10px;
@@ -382,10 +332,9 @@ input {
 }
 
 /*section 5 (footer stuff)*/
-
 #five {
     background-color: var(--primary-dark);
-    height: 125px;
+    min-height: auto;
 }
 
 .social-icon {
@@ -393,11 +342,8 @@ input {
 }
 
 #five #social-icons-div {
-    padding-top: 25px;
-    /*display: flex;*/
     flex-direction: row;
     justify-content: center;
-    /*background-color: indigo;*/
 }
 
 #five #social-icons-div a {
@@ -409,20 +355,20 @@ input {
 }
 
 /*blog css*/
-
-#blog-container {
-    margin-top: 70px;
-    /*background-color: indigo;*/
-    display: flex;
-    justify-content: center;
-}
-
 #blog-section {
-    height: 800px;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /*login section*/
-
 #login-section {
-    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+
