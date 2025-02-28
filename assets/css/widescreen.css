@@ -25,7 +25,7 @@ html, body {
     background: var(--gray-100);
     height: 100%;
     width: 100%;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 section {
@@ -72,7 +72,9 @@ nav a {
 
 #check {
     display: none;
-}/*section one css (intro/starting section)*/
+}
+
+/*section one css (intro/starting section)*/
 #one {
     background-color: var(--primary-dark);
 }
