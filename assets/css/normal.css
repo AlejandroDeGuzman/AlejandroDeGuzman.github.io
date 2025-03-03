@@ -22,6 +22,7 @@
 /*css animations/transitions*/
 
 html, body {
+    scroll-behavior: smooth;
     background: var(--gray-100);
     height: 100%;
     width: 100%;
