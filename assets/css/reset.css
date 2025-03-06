@@ -4,9 +4,9 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box;
 }
 
-ul, ol {
-    list-style: none;
+html, body, section, nav, ul, li, a, div, h1, h2, h3, p, pre, code, form, textarea, input, img {
+    margin: 0;
+    padding: 0;
 }
