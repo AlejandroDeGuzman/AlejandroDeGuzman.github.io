@@ -213,6 +213,10 @@ nav a {
     border: 2px solid black;
 }
 
+#project-one .project-content{
+    flex-direction: column;
+}
+
 #project-two {
     margin-top: -5px;
 }

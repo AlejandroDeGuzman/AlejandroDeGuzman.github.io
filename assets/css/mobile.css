@@ -220,9 +220,13 @@ nav a {
 }
 
 #tankSquaredImg {
-    width: 80%;
+    width: 70%;
     border-radius: 10px;
     border: 2px solid black;
+}
+
+#project-one .project-content{
+    flex-direction: column;
 }
 
 #project-two {
