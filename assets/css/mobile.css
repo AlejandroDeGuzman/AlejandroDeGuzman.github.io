@@ -371,3 +371,11 @@ input {
     justify-content: center;
     align-items: center;
 }
+
+/* section 6, education section */
+#six {
+    min-height: auto; 
+}
+#six p, #six ul li {
+    font-size: 0.8rem;
+}
