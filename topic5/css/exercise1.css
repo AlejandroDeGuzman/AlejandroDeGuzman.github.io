@@ -1,6 +1,19 @@
+body {
+    background-color: grey;
+}
+
 .tourist-attraction {
     background-color: grey;
-    padding: 10px;
+    padding: 2rem;
+}
+
+.tourist-attraction figcaption p {
+    background-color: white;
+    width: 50%; 
+}
+
+.description {
+    padding-left: 2rem;
 }
 
 #palawan {
