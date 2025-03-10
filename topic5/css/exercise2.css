@@ -1,0 +1,135 @@
+/*navbar css*/
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+    margin: 0;
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header nav h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+nav ul li {
+    display: inline;
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding: 3px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    text-decoration: none;
+}
+
+/*grid content*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.content {
+    background-color: grey;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-wrap: break-word; /* Modern alternative to word-wrap */
+    word-break: break-word; /* Break words to prevent overflow */
+}
+
+/*research interests*/
+#research-interests {
+    text-align: left;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#research-interests h2 {
+    text-align: center;
+}
+
+/*skills*/
+#skills {
+    text-align: left;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#skills h2 {
+    text-align: center;
+}
+
+/*main section*/
+#main-section img {
+    border-radius: 10px;
+    border: solid black 3px;
+    width: 50%;
+}
+
+#main-section figure {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+#main-section {
+
+}
+
+#main-section figcaption {
+    text-align: none;
+}
+
+#text-content {
+    background-color: white;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/*Hobbies */
+#hobbies {
+    text-align: left;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#hobbies h2 {
+    text-align: center;
+}
+
+#movies {
+    text-align: left;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#movies h2 {
+    text-align: center;
+}
