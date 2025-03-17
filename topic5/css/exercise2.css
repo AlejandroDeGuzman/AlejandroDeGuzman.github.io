@@ -1,6 +1,6 @@
 /*navbar css*/
 html, body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: '42dot Sans';
 }
 nav {
     margin: 0;
@@ -14,9 +14,11 @@ nav {
 header nav h1 {
     color: white;
     font-size: 2rem;
+    font-family: 'Abel';
 }
 
 nav ul li {
+    font-family: 'Abel';
     display: inline;
     list-style-type: none;
     font-size: 1.5rem;
@@ -84,6 +86,7 @@ nav ul {
 }
 
 #main-section figure {
+    font-family: 'Aboreto';
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -99,6 +102,7 @@ nav ul {
 }
 
 #text-content {
+    font-family: 'Aboreto';
     background-color: white;
     text-align: left;
     padding-top: 5px;
