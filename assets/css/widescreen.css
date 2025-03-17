@@ -1,3 +1,6 @@
+/*define custom colour scheme via css variables*/
+/*:root is the highest level parent element*/
+
 :root {
     /* Color Scheme */
     --primary-dark: #0a0a0a;       /* Rich black */
@@ -10,19 +13,25 @@
     --accent-100: #f5f3ff;        /* Very light purple */
 }
 
+/*reset padding, and margin on elements used in the website*/
 html, body, section, nav, ul, li, a, div, h1, h2, h3, p, pre, code, form, textarea, input, img {
     margin: 0;
     padding: 0;
+    /*width and height of an element includes the padding, border, as well as the content itself*/
     box-sizing: border-box
 }
 
+/*make the font weight bold for each of the headers used*/
 h1, h2, h3, h4 {
     font-weight: bold;
 }
 
 html, body {
-    scroll-behavior: smooth;
+    /*allows smooth scrolling transitions in website */
+    scroll-behavior: smooth;  
     background: var(--gray-100);
+
+    /*makes width and height of section the entire viewport*/
     height: 100%;
     width: 100%;
     font-size: 28px;
@@ -30,7 +39,7 @@ html, body {
 }
 
 section {
-    /*height: 100vh;*/
+    /*set min height of element to 100% of viewport*/
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
@@ -122,8 +131,6 @@ nav a {
 }
 
 #text-content-two {
-    position: relative;
-    top: auto;
     padding: 1rem;
 }
 
