@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link href="../topic6/css/exercise5.css" rel="stylesheet">
-    </head>
-    <body>
-    
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise5</title>
+    <!-- link to css sheet -->
+    <link rel="stylesheet" href="../topic6/css/exercise5.css">
+</head>
+<body>
+    <!-- create table -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="16">Multiplication Table</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <script>
+                
+                // create the first row x, 1, 2, 3, 4, ..., 15
+                document.write("<tr>");
+                document.write("<th>X</th>");
+                for (let i = 1; i <= 15; i++) {
+                    document.write("<th>" + i + "</th>");
+                }
+
+                // create the other remaining rows...
+                // first for loop is to iterate over the rows, the nested for loop is to iterate over the columns
+                for (let i = 1; i <= 15; i++) {
+                    document.write("<tr>");
+                    document.write("<th>" + i + "</th>");
+                    for (let j = 1; j <= 15; j++) {
+                        document.write("<td>" + i * j + "</td>");
+                    }
+                    document.write("</tr>");
+                }
+                defer
+            </script>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th colspan="16">JavaScript</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
 </html>
