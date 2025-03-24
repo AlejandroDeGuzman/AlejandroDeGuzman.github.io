@@ -76,6 +76,7 @@ nav a {
     font-size: 0.7rem;
 }
 
+/*this check stuff is to essentially hide the hambuger check button as this is for widescreen and not mobile*/
 .checkbtn {
     display: none;
 }
@@ -105,6 +106,7 @@ nav a {
 
 #text-content-one {
     padding: 5%;
+    /*places the text content in the middle of the first section by displacing it by 50% from the top*/
     top: 50%;
     position: absolute;
     margin: 0;
