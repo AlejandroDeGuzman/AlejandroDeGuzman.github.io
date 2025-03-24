@@ -1,6 +1,5 @@
 /*define custom colour scheme via css variables*/
 /*:root is the highest level parent element*/
-
 :root {
     /* Color Scheme */
     --primary-dark: #0a0a0a;       /* Rich black */
@@ -49,6 +48,7 @@ section {
 /*navbar css*/
 nav {
     z-index: 1000;  /* z index set to highest priority so that it will always stay on top */
+    /*position set to fixed so that it will always stay at the top of the viewport  */
     position: fixed;
     width: 100%;
     top: 0;
