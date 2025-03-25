@@ -1,3 +1,5 @@
+/*define custom colour scheme via css variables*/
+/*:root is the highest level parent element*/
 :root {
     /* Color Scheme */
     --primary-dark: #0a0a0a;       /* Rich black */
@@ -10,19 +12,25 @@
     --accent-100: #f5f3ff;        /* Very light purple */
 }
 
+/*reset padding, and margin on elements used in the website*/
 html, body, section, nav, ul, li, a, div, h1, h2, h3, p, pre, code, form, textarea, input, img {
     margin: 0;
     padding: 0;
+    /*width and height of an element includes the padding, border, as well as the content itself*/
     box-sizing: border-box
 }
 
+/*make the font weight bold for each of the headers used*/
 h1, h2, h3, h4 {
     font-weight: bold;
 }
 
 html, body {
-    scroll-behavior: smooth;
+    /*allows smooth scrolling transitions in website */
+    scroll-behavior: smooth;  
     background: var(--gray-100);
+
+    /*makes width and height of section the entire viewport*/
     height: 100%;
     width: 100%;
     font-size: 28px;
@@ -30,7 +38,7 @@ html, body {
 }
 
 section {
-    /*height: 100vh;*/
+    /*set min height of element to 100% of viewport*/
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
@@ -40,6 +48,7 @@ section {
 /*navbar css*/
 nav {
     z-index: 1000;  /* z index set to highest priority so that it will always stay on top */
+    /*position set to fixed so that it will always stay at the top of the viewport  */
     position: fixed;
     width: 100%;
     top: 0;
@@ -67,6 +76,7 @@ nav a {
     font-size: 0.7rem;
 }
 
+/*this check stuff is to essentially hide the hambuger check button as this is for widescreen and not mobile*/
 .checkbtn {
     display: none;
 }
@@ -96,6 +106,7 @@ nav a {
 
 #text-content-one {
     padding: 5%;
+    /*places the text content in the middle of the first section by displacing it by 50% from the top*/
     top: 50%;
     position: absolute;
     margin: 0;
@@ -122,8 +133,6 @@ nav a {
 }
 
 #text-content-two {
-    position: relative;
-    top: auto;
     padding: 1rem;
 }
 
@@ -162,12 +171,14 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     margin: 3rem;
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
     border-left: 5px solid var(--accent-400);
+
+    /*aligns all the items in the center*/
+    align-items: center;
     text-align: center;
 }
 
