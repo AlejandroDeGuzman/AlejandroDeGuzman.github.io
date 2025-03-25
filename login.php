@@ -29,26 +29,24 @@
                 <li><a href="index.html#two">about me.</a></li>
                 <li><a href="index.html#three">projects.</a></li>
                 <li><a href="index.html#four">contact.</a></li>
-                <li><a href="blog.html#five">links.</a></li>
+                <li><a href="login.php#five">links.</a></li>
                 <li><a href="index.html#six">education.</a></li>
-                <li><a href="login.html">login.</a></li>
-                <li><a href="blog.html">blog.</a></li>
+                <li><a href="login.php">login.</a></li>
+                <li><a href="blog.php">blog.</a></li>
             </ul> 
         </nav>
 
-        <section id="blog-section">
+        <section id="login-section">
             <div id="contact-form-div">
-                <h3>(blog.)</h3>
-                <form>
-                    <h4>(add a blog.)</h4>
+                <h3>(login.)</h3>
+                <form action="login.php" method="POST">
                     <div>
-                        <input type="text" id="title" name="title" placeholder="Enter title" required>
-                        <textarea id="message" name="message" placeholder="Write your text here..." style="height=200px" required></textarea>
+                        <input type="email" id="email" name="email" placeholder="Your email" required>   
+                        <input type="password" id="password" name="password" placeholder="Your password" required>
                         <input type="submit" value="(submit.)">    
-                        <input type="reset" value="(clear.)">   
                     </div>
                 </form> 
-            </div>
+            </div>   
         </section>
 
         <footer>
