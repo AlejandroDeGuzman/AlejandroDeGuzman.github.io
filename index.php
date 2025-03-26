@@ -25,6 +25,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
     </head>
     <body>
+        <?php
+            session_start();
+        ?>
 
         <!-- navbar -->
         <header>
@@ -41,6 +44,7 @@
                     <li><a href="#five">links.</a></li>
                     <li><a href="#six">education.</a></li>
                     <li><a href="login.php">login.</a></li>
+                    <li><a href="logout.php">logout.</a></li>
                     <li><a href="blog.php">blog.</a></li>
                 </ul> 
             </nav>
@@ -50,6 +54,13 @@
         <!-- intro section -->
         <section id="one">
                 <div class="flex-container">
+                    <?php
+                    // Echo session variables that were set on previous page
+                    if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
+                        echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
+                    }
+        ?>
+
                     <div id="text-content-one">
                         <h1>&lt;Alejandro De Guzman&gt;</h1>
                         <p>(developer/student)</p>

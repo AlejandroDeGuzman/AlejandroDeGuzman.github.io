@@ -66,12 +66,7 @@
                 $sessionManager->login($email, $password);
             }
 
-            // testing sql
-            // $sql = "
-            // INSERT INTO logins (email, password)
-            // VALUES ('test2@gmail.com', 'password2');
-            //";
-            //$sessionManager->getDBC()->getPDOInstance()->query($sql);
+           //$sessionManager->getDBC()->getPDOInstance()->query($sql);
         ?>
         </section>
 
