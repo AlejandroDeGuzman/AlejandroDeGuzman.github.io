@@ -12,8 +12,8 @@
         <!-- css stuff -->
         <link href="./assets/css/reset.css" rel="stylesheet">
         <link href="./assets/css/mobile.css" media="screen and (max-width:500px)" rel="stylesheet">
-        <link href="./assets/css/tablet.css" media="screen and (min-width:501px) and (max-width:838px)" rel="stylesheet">
-        <link href="./assets/css/normal.css" media="screen and (min-width: 839px) and (max-width:1200px)" rel="stylesheet">
+        <link href="./assets/css/tablet.css" media="screen and (min-width:501px) and (max-width:975px)" rel="stylesheet">
+        <link href="./assets/css/normal.css" media="screen and (min-width: 976px) and (max-width:1200px)" rel="stylesheet">
         <link href="./assets/css/widescreen.css" media="screen and (min-width:1201px)" rel="stylesheet">
 
         <!-- for the hamburger icon -->
@@ -54,16 +54,17 @@
         <!-- intro section -->
         <section id="one">
                 <div class="flex-container">
-                    <?php
-                    // Echo session variables that were set on previous page
-                    if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
-                        echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
-                    }
-        ?>
+
 
                     <div id="text-content-one">
                         <h1>&lt;Alejandro De Guzman&gt;</h1>
                         <p>(developer/student)</p>
+                        <?php
+                        // Echo session variables that were set on previous page
+                        if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
+                            echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
+                        }
+                        ?>
                     </div>
                 </div>
         </section>

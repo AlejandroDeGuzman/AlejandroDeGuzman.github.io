@@ -32,6 +32,7 @@
                 <li><a href="login.php#five">links.</a></li>
                 <li><a href="index.php#six">education.</a></li>
                 <li><a href="login.php">login.</a></li>
+                <li><a href="logout.php">logout.</a></li>
                 <li><a href="blog.php">blog.</a></li>
             </ul> 
         </nav>
