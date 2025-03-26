@@ -64,45 +64,31 @@ class SessionDataManager extends MySQLDatabaseModel
         return $this->DBC;
     }
 
-    function authenticateLogin($email, $password): bool 
+    function login($email, $password): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT password 
-            FROM logins 
+            SELECT * 
+            FROM UserData 
             WHERE email = ?; 
             ");
         $stmt->execute([$email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
 
         if ($user) 
         {
-            echo "<br>valid";
-            return $password == $user['password'];
+            if ($password == $user['password'])
+            {
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $username = $user['username'];
+                echo "<br><p>Valid Login, Welcome $username!</p>";
+            }
+            
         }
-        echo "<br>not valid";
-        return false;
+        else 
+        {
+            echo "<br><p>Not a Valid Login</p>";
+        }
     }
-
-    // function tableExists($connection, $dbname, $table): bool
-    // {
-    //     $statement = $connection->prepare("
-    //         SELECT COUNT(*) 
-    //         FROM INFORMATION_SCHEMA.TABLES 
-    //         WHERE TABLE_SCHEMA = ? 
-    //         AND TABLE_NAME = ?
-    //     ");
-    //     $statement->execute([$dbname, $table]);
-    //     return (bool)$statement->fetchColumn();
-    // }
-    //
-    // function createTable($connection, $dbname, $tablename): void
-    // {
-    //     $statement = $connection->prepare("
-    //         CREATE TABLE $tablename (
-    //             column1 INT 
-    //         )
-    //         ");
-    //     $statement->execute();
-    // }
 }
 ?>

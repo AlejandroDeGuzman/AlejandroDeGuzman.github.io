@@ -61,9 +61,9 @@
             {
                 $email = $_POST['email'];
                 $password = $_POST['password'];
-                echo "Email Entered: $email<br>";
-                echo "Password Entered: $password";
-                $sessionManager->authenticateLogin($email, $password);
+                echo "<p>Email Entered: $email</p><br>";
+                echo "<p>Password Entered: $password</p>";
+                $sessionManager->login($email, $password);
             }
 
             // testing sql
