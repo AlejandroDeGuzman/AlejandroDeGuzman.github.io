@@ -26,11 +26,11 @@
                 <i class="fas fa-bars"></i>
             </label>
            <ul>
-                <li><a href="index.html#two">about me.</a></li>
-                <li><a href="index.html#three">projects.</a></li>
-                <li><a href="index.html#four">contact.</a></li>
+                <li><a href="index.php#two">about me.</a></li>
+                <li><a href="index.php#three">projects.</a></li>
+                <li><a href="index.php#four">contact.</a></li>
                 <li><a href="blog.php#five">links.</a></li>
-                <li><a href="index.html#six">education.</a></li>
+                <li><a href="index.php#six">education.</a></li>
                 <li><a href="login.php">login.</a></li>
                 <li><a href="blog.php">blog.</a></li>
             </ul> 
