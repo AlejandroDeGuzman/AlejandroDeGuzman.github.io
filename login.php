@@ -48,8 +48,30 @@
                 </form> 
             </div>   
         <?php
-        require 'db.php';
-        echo "Dean Ballard";
+            require 'db.php';
+            // setup the database stuff...
+            $host = "localhost";
+            $dbname = "sys";
+            $user = "root";
+            $pass = "root";
+            $DBC = new MySQLDatabaseConnection($host, $dbname, $user, $pass);
+            $sessionManager = new SessionDataManager($DBC);
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") 
+            {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                echo "Email Entered: $email<br>";
+                echo "Password Entered: $password";
+                $sessionManager->authenticateLogin($email, $password);
+            }
+
+            // testing sql
+            // $sql = "
+            // INSERT INTO logins (email, password)
+            // VALUES ('test2@gmail.com', 'password2');
+            //";
+            //$sessionManager->getDBC()->getPDOInstance()->query($sql);
         ?>
         </section>
 

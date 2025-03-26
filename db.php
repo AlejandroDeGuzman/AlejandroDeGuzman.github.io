@@ -1,8 +1,8 @@
 <?php
-$user = "root";
-$pass = "root";
-$dbname = "sys";
-$host = "localhost";
+// $user = "root";
+// $pass = "root";
+// $dbname = "sys";
+// $host = "localhost";
 
 class MySQLDatabaseConnection 
 {
@@ -12,11 +12,9 @@ class MySQLDatabaseConnection
         try 
         {
             $this->PDOInstance = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-            echo "Connection successfull!\n";
         } 
         catch (PDOException $e) 
         {
-            echo "Error, cannot connect to database!";
             throw new Exception("Database Connection Error!");
             tryReconnecting();
         }
@@ -58,52 +56,53 @@ class SessionDataManager extends MySQLDatabaseModel
     {
         // call super of abstract class
         parent::__construct($DBC);
+        session_start();
     }
 
-    function tableExists($connection, $dbname, $table): bool
+    function getDBC(): MySQLDatabaseConnection 
     {
-        $statement = $connection->prepare("
-            SELECT COUNT(*) 
-            FROM INFORMATION_SCHEMA.TABLES 
-            WHERE TABLE_SCHEMA = ? 
-            AND TABLE_NAME = ?
-        ");
-        $statement->execute([$dbname, $table]);
-        return (bool)$statement->fetchColumn();
+        return $this->DBC;
     }
 
-    function createTable($connection, $dbname, $tablename): void
+    function authenticateLogin($email, $password): bool 
     {
-        $statement = $connection->prepare("
-            CREATE TABLE $tablename (
-                column1 INT 
-            )
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            SELECT password 
+            FROM logins 
+            WHERE email = ?; 
             ");
-        $statement->execute();
-    }
-}
+        $stmt->execute([$email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-try {
-    $databaseConnection = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-    echo "Connection successfull!\n";
-    $table = "logins";
-    if (tableExists($databaseConnection, $dbname, $table)) {
-        echo "Table Exists!";
-    } else {
-        $sqlQuery = "
-        CREATE TABLE $table (
-            id INT NOT NULL AUTO_INCREMENT,
-            email VARCHAR(50) NOT NULL,
-            password VARCHAR(50) NOT NULL,
-            PRIMARY KEY ( id )
-        )
-        ";
-        $databaseConnection->exec($sqlQuery);
-        // createTable($databaseConnection, $dbname, $table);
-        echo "Table does not exist!";
+        if ($user) 
+        {
+            echo "<br>valid";
+            return $password == $user['password'];
+        }
+        echo "<br>not valid";
+        return false;
     }
-} catch (PDOException $e) {
-    echo "Error, cannot connect to database!";
-    // attempt to retry the connection after some timeout for example
+
+    // function tableExists($connection, $dbname, $table): bool
+    // {
+    //     $statement = $connection->prepare("
+    //         SELECT COUNT(*) 
+    //         FROM INFORMATION_SCHEMA.TABLES 
+    //         WHERE TABLE_SCHEMA = ? 
+    //         AND TABLE_NAME = ?
+    //     ");
+    //     $statement->execute([$dbname, $table]);
+    //     return (bool)$statement->fetchColumn();
+    // }
+    //
+    // function createTable($connection, $dbname, $tablename): void
+    // {
+    //     $statement = $connection->prepare("
+    //         CREATE TABLE $tablename (
+    //             column1 INT 
+    //         )
+    //         ");
+    //     $statement->execute();
+    // }
 }
 ?>
