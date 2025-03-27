@@ -49,7 +49,6 @@ class SessionDataManager extends MySQLDatabaseModel
     protected $DBC;
     public function __construct($DBC)
     {
-        session_start();
         // call super of abstract class
         parent::__construct($DBC);
     }

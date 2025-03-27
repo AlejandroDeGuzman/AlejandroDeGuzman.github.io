@@ -1,68 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-
-        <!-- css files for styling -->
-        <link href="./assets/css/reset.css" rel="stylesheet">
-        <link href="./assets/css/mobile.css" media="screen and (max-width:500px)" rel="stylesheet">
-        <link href="./assets/css/tablet.css" media="screen and (min-width:501px) and (max-width:768px)" rel="stylesheet">
-        <link href="./assets/css/normal.css" media="screen and (min-width: 769px) and (max-width:1200px)" rel="stylesheet">
-        <link href="./assets/css/widescreen.css" media="screen and (min-width:1201px)" rel="stylesheet">
-
-        <!-- for the hamburger icon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    </head>
-    <body>
-         <!-- navbar -->
-        <nav>
-            <label class="logo">(./)</label>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-           <ul>
-                <li><a href="index.php#two">about me.</a></li>
-                <li><a href="index.php#three">projects.</a></li>
-                <li><a href="index.php#four">contact.</a></li>
-                <li><a href="login.php#five">links.</a></li>
-                <li><a href="index.php#six">education.</a></li>
-                <li><a href="login.php">login.</a></li>
-                <li><a href="logout.php">logout.</a></li>
-                <li><a href="blog.php">blog.</a></li>
-            </ul> 
-        </nav>
-        <?php
-        session_start();
-        session_unset();
-        session_destroy();
-        ?>
-
-        <section id="login-section">
-            <h3>(logout.)</h3>
-        </section>
-
-        <footer>
-            <section id="five">
-                <div class="flex-container">
-                    <div id="social-icons-div">
-                        <a href="https://www.linkedin.com/in/alejandro-de-guzman/">
-                            <img class="social-icon" src="./assets/images/linkedin.png" alt="linkedin icon">
-                        </a>
-                        <a href="https://www.linkedin.com/in/alejandro-de-guzman/">
-                            <img class="social-icon" src="./assets/images/github.png" alt="github icon">
-                        </a>
-                        <a href="mailto:alejandrodeguzman@proton.me">
-                            <img class="social-icon" src="./assets/images/email.png" alt="email icon">
-                        </a>   
-                    </div>
-                    <p>(+447853422545)</p>
-                </div>
-            </section>
-        </footer>
-    </body>
-</html>
+<?php
+    require __DIR__ . '/includes/head.php'; 
+    session_unset();
+    session_destroy();
+?>
+<section id="login-section">
+    <h3>(logout.)</h3>
+</section>
+<?php 
+    require __DIR__ . '/includes/footer.php'; 
+?>
