@@ -72,9 +72,11 @@ class SessionDataManager extends MySQLDatabaseModel
             if ($password == $user["password"]) {
                 $_SESSION["username"] = $user["username"];
                 $_SESSION["email"] = $user["email"];
+                $_SESSION["id"] = $user["id"];
                 $_SESSION["authenticated"] = true;
                 $_SESSION["login-success"] = true;
-                echo "<br><p>Valid login, welcome " . $_SESSION["username"] . "!</p>";
+                // echo "<br><p>Valid login, welcome " . $_SESSION["username"] . "!</p>";
+                // echo "<br><p>ID: " . $_SESSION["id"] . "!</p>";
             }
 
         } else {

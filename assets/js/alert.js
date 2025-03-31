@@ -3,16 +3,28 @@ function isHidden(elementToCheck) {
 }
 
 function hideElement(elementToCheck) {
-    elementToCheck.style.visibility = "hidden";
-}
-
-const loginSuccessDiv = document.getElementById("login-success");
-if (loginSuccessDiv != null) {
-    if (!isHidden(loginSuccessDiv)) {
-        hideElement(loginSuccessDiv);
+    if (elementToCheck != null) {
+        elementToCheck.style.display = "none";
     }
-} else {
-    console.log("Not on 'login.php' file!");
 }
 
+var loginSuccessDiv = document.getElementById("login-success");
+hideElement(loginSuccessDiv);
+var userDataDiv = document.getElementById("user-data");
+// hideElement(userDataDiv);
+// const username = userDataDiv.dataset.username;
+// const loginSuccess = userDataDiv.dataset.loginSuccess === 'true'; // Convert to boolean
+// console.log("Username: " + username);
+// console.log("User Logged In? " + loginSuccess);
+
+// get the corresponding div elements and hide them
+function alertplace() {
+    if (userDataDiv != null) {
+        console.log(userDataDiv.innerHTML);
+        //     const username = userDataDiv.dataset.username;
+        //     const loginSuccess = userDataDiv.dataset.loginSuccess == '1'; // Convert to boolean
+        //     console.log("Username: " + username);
+        //     console.log("User Logged In? " + loginSuccess);
+    }
+}
 
