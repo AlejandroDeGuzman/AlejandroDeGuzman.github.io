@@ -382,3 +382,15 @@ input {
 #six p, #six ul li {
     font-size: 0.8rem;
 }
+
+/* alerts */
+
+.alert {
+
+}
+
+#login-success {
+    display: flex;
+    flex-direction: row;
+    /* background-color: indigo; */
+}

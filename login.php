@@ -2,13 +2,19 @@
     require __DIR__ . '/includes/head.php'; 
 ?>
 <section id="login-section">
+
+    <div class="project" id="login-success">
+        <p><strong>Alert!</strong> Insert login message here.</p>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    </div>
+
     <div id="contact-form-div">
         <h3>(login.)</h3>
         <form action="login.php" method="POST">
             <div>
                 <input type="email" id="email" name="email" placeholder="Your email" required>   
                 <input type="password" id="password" name="password" placeholder="Your password" required>
-                <input type="submit" value="(submit.)">    
+                <input type="submit" value="(submit.)" onclick="alertplace()">    
             </div>
         </form> 
     </div>   
