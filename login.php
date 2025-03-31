@@ -2,7 +2,6 @@
     require __DIR__ . '/includes/head.php'; 
 ?>
 <section id="login-section">
-
     <div class="project" id="login-success">
         <p><strong>Alert!</strong> Insert login message here.</p>
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 

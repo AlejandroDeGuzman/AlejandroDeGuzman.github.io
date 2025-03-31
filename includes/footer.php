@@ -22,5 +22,6 @@
         // Initialize Highlight.js
         hljs.highlightAll();
         </script>
+        <script src="../assets/js/alert.js"></script>
     </body>
 </html>
