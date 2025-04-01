@@ -2,6 +2,12 @@
 <header>
     <nav>
         <label class="logo">(./)</label>
+        <?php
+            // Echo session variables that were set on previous page
+            if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
+                echo '<p id="hello-message">Hello ' . $_SESSION["username"] . '</p>';
+            }
+        ?>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>

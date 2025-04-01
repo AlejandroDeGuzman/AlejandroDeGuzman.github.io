@@ -421,3 +421,7 @@ input {
 .closebtn {
     font-size: 35px;
 }
+
+#hello-message {
+    display: none;
+}
