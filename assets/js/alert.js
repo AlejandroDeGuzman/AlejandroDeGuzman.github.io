@@ -8,23 +8,28 @@ function hideElement(elementToCheck) {
     }
 }
 
-var loginSuccessDiv = document.getElementById("login-success");
-hideElement(loginSuccessDiv);
+function revealElement(elementToCheck) {
+    if (elementToCheck != null) {
+        elementToCheck.style.display = "flex";
+    }
+}
+
 var userDataDiv = document.getElementById("user-data");
-// hideElement(userDataDiv);
-// const username = userDataDiv.dataset.username;
-// const loginSuccess = userDataDiv.dataset.loginSuccess === 'true'; // Convert to boolean
-// console.log("Username: " + username);
-// console.log("User Logged In? " + loginSuccess);
+hideElement(userDataDiv);
 
 // get the corresponding div elements and hide them
 function alertplace() {
+    var loginSuccessDiv = document.getElementById("login-success");
     if (userDataDiv != null) {
-        console.log(userDataDiv.innerHTML);
-        //     const username = userDataDiv.dataset.username;
-        //     const loginSuccess = userDataDiv.dataset.loginSuccess == '1'; // Convert to boolean
-        //     console.log("Username: " + username);
-        //     console.log("User Logged In? " + loginSuccess);
+        var innerTags = userDataDiv.getElementsByTagName('p');
+        var usernameText = innerTags[0].textContent;
+        var loginSuccessText = innerTags[1].textContent;
+        console.log(loginSuccessText);
+        console.log(usernameText);
+        if (loginSuccessText == "1") {
+            console.log("revealing element!");
+            revealElement(loginSuccessDiv);
+        }
     }
 }
 

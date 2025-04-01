@@ -3,10 +3,9 @@
 ?>
 <section id="login-section">
 
-    
-    <div class="project" id="login-success">
-        <p><strong>Alert!</strong> Insert login message here.</p>
+    <div class="alert" id="login-success">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p><strong>Success!</strong> Successfully logged in.</p>
     </div>
 
     <div id="contact-form-div">
@@ -38,7 +37,10 @@
         // echo "<p>Password Entered: $password</p>";
         $sessionManager->login($email, $password);
        
-        echo '<div id="user-data"><p>' . htmlspecialchars($_SESSION['username'] ?? 'NA') . '</p></div>';
+    echo '<div id="user-data">
+        <p>' . htmlspecialchars($_SESSION['username'] ?? 'NA') . '</p>
+        <p id="login-success">' . htmlspecialchars($_SESSION['login-success'] ?? 'NA') . '</p>
+        </div>';
         echo '<script src="./assets/js/alert.js"></script>';
         echo "<script>alertplace();</script>";
     }

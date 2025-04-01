@@ -386,11 +386,38 @@ input {
 /* alerts */
 
 .alert {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+    text-align: center;
 }
 
 #login-success {
-    display: flex;
+    display: none;
+    gap: 20px;
+}
+
+/* alert stuff... */
+.alert {
+    display: none;
     flex-direction: row;
-    /* background-color: indigo; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+    text-align: center;
+    gap: 20px;
+}
+
+.closebtn {
+    font-size: 35px;
 }
