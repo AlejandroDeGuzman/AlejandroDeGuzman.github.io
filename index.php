@@ -9,7 +9,7 @@
                 <p>(developer/student)</p>
                 <?php
                 // Echo session variables that were set on previous page
-                if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
+                if (isset($_SESSION["username"]) && $_SESSION["login-success"] == true) {
                     echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
                 }
                 ?>

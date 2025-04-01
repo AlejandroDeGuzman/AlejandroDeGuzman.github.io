@@ -4,7 +4,7 @@
         <label class="logo">(./)</label>
         <?php
             // Echo session variables that were set on previous page
-            if (isset($_SESSION["username"]) && $_SESSION["authenticated"] == true) {
+            if (isset($_SESSION["username"]) && $_SESSION["login-success"] == true) {
                 echo '<p id="hello-message">Hello ' . $_SESSION["username"] . '</p>';
             }
         ?>
