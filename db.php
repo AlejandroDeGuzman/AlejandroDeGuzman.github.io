@@ -75,7 +75,6 @@ class SessionDataManager extends MySQLDatabaseModel
                 $_SESSION["authenticated"] = true;
                 echo "<br><p>Valid login, welcome " . $_SESSION["username"] . "!</p>";
             }
-
         } else {
             echo "<br><p>Not a Valid Login</p>";
         }
