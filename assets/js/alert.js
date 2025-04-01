@@ -21,15 +21,33 @@ function alertplace() {
     if (userDataDiv != null) {
         var innerTags = userDataDiv.getElementsByTagName('p');
         var usernameText = innerTags[0].textContent;
-        var loginSuccessText = innerTags[1].textContent;
-        console.log(loginSuccessText);
         console.log(usernameText);
-        if (loginSuccessText == "1") {
-            var loginSuccessDiv = document.getElementById("login-success");
-            revealElement(loginSuccessDiv);
-        } else if (usernameText == "NA") {
+        if (usernameText == "NA") {
             var loginSuccessDiv = document.getElementById("login-fail");
             revealElement(loginSuccessDiv);
         }
     }
 }
+
+// using event listeners instead of inline js
+var loginSuccess = document.querySelector('#login-success .closebtn');
+var loginFail = document.querySelector('#login-fail .closebtn');
+var submitLoginButton = document.querySelector('#contact-form-div .form  #submit');
+if (loginFail) {
+    loginFail.addEventListener('click', function () {
+        this.closest('.alert').style.display = 'none';
+    })
+}
+
+if (loginSuccess) {
+    loginSuccess.addEventListener('click', function () {
+        this.closest('.alert').style.display = 'none';
+    })
+}
+
+if (submitLoginButton) {
+    submitLoginButton.addEventListener('click', function () {
+        alertplace();
+    })
+}
+

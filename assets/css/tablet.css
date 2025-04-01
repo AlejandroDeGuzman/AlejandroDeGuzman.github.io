@@ -393,6 +393,9 @@ input {
 }
 
 /* alert stuff... */
+#login-success {
+    display: flex;
+}
 .alert {
     display: none;
     flex-direction: row;
