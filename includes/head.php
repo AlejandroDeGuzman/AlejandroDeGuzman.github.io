@@ -1,9 +1,4 @@
 <!DOCTYPE html> 
-<?php
-$cookieName = "user";
-$cookieValue = "NA";
-setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // cookie will expire in one day
-?>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
@@ -34,7 +29,7 @@ setcookie($cookieName, $cookieValue, time() + (86400 * 30), "/"); // cookie will
     </head>
     <body>
         <?php
-            session_start();
+//            session_start();
             include 'navbar.php';
         ?>
         <main>
