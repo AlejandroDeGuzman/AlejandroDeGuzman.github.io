@@ -17,9 +17,7 @@ function revealElement(elementToCheck) {
 var userDataDiv = document.getElementById("user-data");
 hideElement(userDataDiv);
 
-// get the corresponding div elements and hide them
 function alertplace() {
-    var loginSuccessDiv = document.getElementById("login-success");
     if (userDataDiv != null) {
         var innerTags = userDataDiv.getElementsByTagName('p');
         var usernameText = innerTags[0].textContent;
@@ -27,9 +25,11 @@ function alertplace() {
         console.log(loginSuccessText);
         console.log(usernameText);
         if (loginSuccessText == "1") {
-            console.log("revealing element!");
+            var loginSuccessDiv = document.getElementById("login-success");
+            revealElement(loginSuccessDiv);
+        } else if (usernameText == "NA") {
+            var loginSuccessDiv = document.getElementById("login-fail");
             revealElement(loginSuccessDiv);
         }
     }
 }
-

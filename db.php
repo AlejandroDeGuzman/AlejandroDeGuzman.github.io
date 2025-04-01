@@ -78,9 +78,8 @@ class SessionDataManager extends MySQLDatabaseModel
                 // echo "<br><p>Valid login, welcome " . $_SESSION["username"] . "!</p>";
                 // echo "<br><p>ID: " . $_SESSION["id"] . "!</p>";
             }
-
         } else {
-            echo "<br><p>Not a Valid Login</p>";
+            $_SESSION["login-success"] = false;
         }
     }
 }

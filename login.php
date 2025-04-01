@@ -8,6 +8,11 @@
         <p><strong>Success!</strong> Successfully logged in.</p>
     </div>
 
+    <div class="alert" id="login-fail">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <p><strong>Fail!</strong> Invalid details, please try again.</p>
+    </div>
+
     <div id="contact-form-div">
         <h3>(login.)</h3>
         <form action="login.php" method="POST">
@@ -33,13 +38,11 @@
     {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        // echo "<p>Email Entered: $email</p><br>";
-        // echo "<p>Password Entered: $password</p>";
         $sessionManager->login($email, $password);
        
     echo '<div id="user-data">
         <p>' . htmlspecialchars($_SESSION['username'] ?? 'NA') . '</p>
-        <p id="login-success">' . htmlspecialchars($_SESSION['login-success'] ?? 'NA') . '</p>
+        <p>' . htmlspecialchars($_SESSION['login-success'] ?? 'NA') . '</p>
         </div>';
         echo '<script src="./assets/js/alert.js"></script>';
         echo "<script>alertplace();</script>";
