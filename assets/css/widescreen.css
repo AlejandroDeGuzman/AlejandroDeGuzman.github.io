@@ -386,3 +386,26 @@ input {
 #six p, #six ul li {
     font-size: 0.8rem;
 }
+
+/* alert stuff... */
+#login-success {
+    display: flex;
+}
+
+.alert {
+    text-align: left;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+    gap: 20px;
+}
+
+.closebtn {
+    font-size: 50px;
+}

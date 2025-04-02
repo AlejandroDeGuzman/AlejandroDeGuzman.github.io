@@ -382,3 +382,46 @@ input {
 #six p, #six ul li {
     font-size: 0.8rem;
 }
+
+/* alerts */
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+    text-align: center;
+}
+
+#login-success {
+    display: none;
+    gap: 20px;
+}
+
+/* alert stuff... */
+#login-success {
+    display: flex;
+}
+
+.alert {
+    display: none;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+    gap: 30px;
+}
+
+.closebtn {
+    font-size: 50px;
+}
