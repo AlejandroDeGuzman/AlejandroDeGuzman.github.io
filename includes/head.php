@@ -29,7 +29,7 @@
     </head>
     <body>
         <?php
-            include 'navbar.php';
             session_start();
+            include 'navbar.php';
         ?>
         <main>
