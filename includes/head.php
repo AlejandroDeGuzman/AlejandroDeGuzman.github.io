@@ -30,5 +30,6 @@
     <body>
         <?php
             include 'navbar.php';
+            session_start();
         ?>
         <main>
