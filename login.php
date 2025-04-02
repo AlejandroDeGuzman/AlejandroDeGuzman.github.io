@@ -2,23 +2,6 @@
     require __DIR__ . '/includes/head.php'; 
 ?>
 <section id="login-section">
-
-    <div class="alert" id="login-fail">
-        <span class="closebtn">&times;</span> 
-        <p><strong>Fail!</strong> Invalid details, please try again.</p>
-    </div>
-
-    <div id="contact-form-div">
-        <h3>(login.)</h3>
-        <form action="login.php" method="POST">
-            <div>
-                <input type="email" id="email" name="email" placeholder="Your email" required>   
-                <input type="password" id="password" name="password" placeholder="Your password" required>
-                <input type="submit" id="submit" value="(submit.)">    
-            </div>
-        </form> 
-    </div>   
-    
 <?php
     require 'db.php';
     // setup the database stuff...
@@ -39,15 +22,30 @@
             //echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
              header('Location: addPost.php');
         }
+        else
+        {
+        echo '<div class="alert" id="login-fail">
+                <span class="closebtn">&times;</span> 
+                <p><strong>Fail!</strong> Invalid details, please try again.</p>
+            </div>';
+        }
        
-    echo '<div id="user-data">
+        echo '<div id="user-data">
         <p>' . htmlspecialchars($_SESSION['username'] ?? 'NA') . '</p>
         <p>' . htmlspecialchars($_SESSION['login-success'] ?? 'NA') . '</p>
         </div>';
-        echo '<script src="./assets/js/alert.js"></script>';
-        echo "<script>alertplace();</script>";
     }
 ?>
+    <div id="contact-form-div">
+        <h3>(login.)</h3>
+        <form action="login.php" method="POST">
+            <div>
+                <input type="email" id="email" name="email" placeholder="Your email" required>   
+                <input type="password" id="password" name="password" placeholder="Your password" required>
+                <input type="submit" id="submit" value="(submit.)">    
+            </div>
+        </form> 
+    </div>   
 </section>
 <?php 
     require __DIR__ . '/includes/footer.php'; 

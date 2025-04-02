@@ -17,7 +17,10 @@ function revealElement(elementToCheck) {
 var userDataDiv = document.getElementById("user-data");
 hideElement(userDataDiv);
 
+var addBlogAlert = document.getElementById("added-blog");
+
 function alertplace() {
+    // checking userDataDiv
     if (userDataDiv != null) {
         var innerTags = userDataDiv.getElementsByTagName('p');
         var usernameText = innerTags[0].textContent;
@@ -27,14 +30,28 @@ function alertplace() {
             revealElement(loginFailDiv);
         }
     }
+
+    // check for add blog alert
+    if (addBlogAlert != null) {
+        revealElement(addBlogAlert);
+    }
 }
 
 // using event listeners instead of inline js
 var loginSuccessCloseButton = document.querySelector('#login-success .closebtn');
-var loginFail = document.querySelector('#login-fail .closebtn');
+var loginFailCloseButton = document.querySelector('#login-fail .closebtn');
 var submitLoginButton = document.querySelector('#contact-form-div .form  #submit');
-if (loginFail) {
-    loginFail.addEventListener('click', function () {
+var submitAddPostButton = document.getElementById("submit");
+var addBlogAlertCloseButton = document.querySelector('#added-blog .closebtn');
+
+if (addBlogAlertCloseButton) {
+    addBlogAlertCloseButton.addEventListener('click', function () {
+        this.closest('.alert').style.display = 'none';
+    })
+}
+
+if (loginFailCloseButton) {
+    loginFailCloseButton.addEventListener('click', function () {
         this.closest('.alert').style.display = 'none';
     })
 }
@@ -55,6 +72,12 @@ if (sessionStorage.getItem("loginSuccessClosed")) {
 
 if (submitLoginButton) {
     submitLoginButton.addEventListener('click', function () {
+        alertplace();
+    })
+}
+
+if (submitAddPostButton) {
+    submitAddPostButton.addEventListener('click', function () {
         alertplace();
     })
 }
