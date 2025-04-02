@@ -1,6 +1,5 @@
 <?php
     require __DIR__ . '/includes/head.php'; 
-    session_start();
 ?>
 <section id="login-section">
 

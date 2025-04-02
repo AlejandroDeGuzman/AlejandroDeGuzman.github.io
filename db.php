@@ -75,8 +75,6 @@ class SessionDataManager extends MySQLDatabaseModel
                 $_SESSION["id"] = $user["id"];
                 $_SESSION["login-success"] = true;
             }
-        } else {
-            $_SESSION["login-success"] = false;
-        }
+        }  
     }
 }

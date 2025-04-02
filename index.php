@@ -7,7 +7,7 @@
             <div id="text-content-one">
                 <h1>&lt;Alejandro De Guzman&gt;</h1>
                 <p>(developer/student)</p>
-<?php
+    <?php
         // Echo session variables that were set on previous page
         if (isset($_SESSION["username"])) {
             echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";

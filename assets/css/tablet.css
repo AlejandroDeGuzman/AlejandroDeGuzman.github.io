@@ -396,6 +396,7 @@ input {
 #login-success {
     display: flex;
 }
+
 .alert {
     display: none;
     flex-direction: row;
@@ -406,8 +407,7 @@ input {
     padding: 20px;
     border-radius: 10px;
     border-left: 5px solid var(--accent-400);
-    text-align: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .closebtn {
