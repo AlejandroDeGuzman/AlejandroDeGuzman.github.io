@@ -70,6 +70,7 @@ class SessionDataManager extends MySQLDatabaseModel
 
         if ($user) {
             if ($password == $user["password"]) {
+                session_start();
                 $_SESSION["username"] = $user["username"];
                 $_SESSION["email"] = $user["email"];
                 $_SESSION["id"] = $user["id"];
