@@ -58,6 +58,15 @@ class SessionDataManager extends MySQLDatabaseModel
         return $this->DBC;
     }
 
+    public function addEntry($title, $message, $user_id): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            INSERT INTO BlogPosts (user_id, title, content)
+            VALUES (?, ?, ?);
+            ");
+        $stmt->execute([$user_id, $title, $message]);
+    }
+
     public function login($email, $password): void
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("

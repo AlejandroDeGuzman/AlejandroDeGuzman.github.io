@@ -1,6 +1,5 @@
 <?php
     require __DIR__ . '/includes/head.php'; 
-    
 ?>
 <section id="blog-section">
     
@@ -24,8 +23,9 @@
     </div>
 
     <div id="contact-form-div">
-        <h3>(blog.)</h3>
-        <form>
+        <h3>(post.)</h3>
+        
+        <form method="POST">
             <h4>(add a post.)</h4>
             <div>
                 <input type="text" id="title" name="title" placeholder="Enter title" required>
@@ -35,6 +35,24 @@
             </div>
         </form> 
     </div>
+    <?php
+        require 'db.php';
+        // setup the database stuff...
+        $host = "localhost";
+        $dbname = "sys";
+        $user = "root";
+        $pass = "root";
+        $DBC = new MySQLDatabaseConnection($host, $dbname, $user, $pass);
+        $sessionManager = new SessionDataManager($DBC);
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+        {
+            $title = $_POST['title'];
+            $message = $_POST['message'];
+            $user_id = $_SESSION['id'];
+            $sessionManager->addEntry($title, $message, $user_id);
+        }
+    ?>
 </section>
 <?php 
     require __DIR__ . '/includes/footer.php'; 
