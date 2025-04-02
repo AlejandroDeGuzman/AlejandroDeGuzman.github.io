@@ -23,6 +23,7 @@
                 echo '<li><a href="login.php">login.</a></li>';
             }
             ?>
+            <li><a href="viewBlog.php">blog.</a></li>
         </ul> 
     </nav>
 </header>

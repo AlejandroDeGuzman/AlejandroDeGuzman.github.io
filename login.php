@@ -47,10 +47,7 @@
         echo '<script src="./assets/js/alert.js"></script>';
         echo "<script>alertplace();</script>";
     }
-
-    //$sessionManager->getDBC()->getPDOInstance()->query($sql);
 ?>
-    
 </section>
 <?php 
     require __DIR__ . '/includes/footer.php'; 
