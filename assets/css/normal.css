@@ -407,19 +407,21 @@ input {
 #login-success {
     display: flex;
 }
+
 .alert {
     display: none;
     flex-direction: row;
+    text-align: left;
     justify-content: space-between;
-    align-items: center;
     margin: 20px;
+    align-items: center;
     background-color: var(--primary-light);
     padding: 20px;
     border-radius: 10px;
     border-left: 5px solid var(--accent-400);
-    gap: 20px;
+    gap: 30px;
 }
 
 .closebtn {
-    font-size: 40px;
+    font-size: 50px;
 }

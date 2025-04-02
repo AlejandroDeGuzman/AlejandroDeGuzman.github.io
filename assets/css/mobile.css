@@ -399,6 +399,7 @@ input {
 }
 
 .alert {
+    text-align: left;
     display: none;
     align-items: center;
     flex-direction: row;
