@@ -59,6 +59,35 @@ class SessionDataManager extends MySQLDatabaseModel
         return $this->DBC;
     }
 
+    public function showAllBlogEntries($stmt): void
+    {
+        $rows = $stmt->fetchAll();
+        foreach ($rows as $row) 
+        {
+            echo 
+            '
+            <div class="blog">
+                <div class="title-date">
+                    <h3>' . htmlspecialchars($row["title"]) . '</h3> 
+                    <p>' . htmlspecialchars($row["created_at"]) . '</p>
+                </div>
+                    <p>' . htmlspecialchars($row["content"]) . '</p>
+            </div>
+            ';
+        }
+    }
+
+    public function getAllBlogEntries($user_id): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            SELECT title, content, created_at
+            FROM BlogPosts
+            WHERE user_id = ?;
+            ");
+        $stmt->execute([$user_id]);
+        $this->showAllBlogEntries($stmt);
+    }
+
     public function addEntry($title, $message, $user_id): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
