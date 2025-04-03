@@ -12,7 +12,7 @@
     $pass = "root";
     $DBC = new MySQLDatabaseConnection($host, $dbname, $user, $pass);
     $sessionManager = new SessionDataManager($DBC);
-    $sessionManager->getAllBlogEntries($_SESSION["id"]);
+    $sessionManager->getAllBlogEntries();
     ?>
 </section>
 <?php 

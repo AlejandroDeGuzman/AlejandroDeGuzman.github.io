@@ -77,14 +77,13 @@ class SessionDataManager extends MySQLDatabaseModel
         }
     }
 
-    public function getAllBlogEntries($user_id): void 
+    public function getAllBlogEntries(): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
             SELECT title, content, created_at
             FROM BlogPosts
-            WHERE user_id = ?;
             ");
-        $stmt->execute([$user_id]);
+        $stmt->execute();
         $this->showAllBlogEntries($stmt);
     }
 
