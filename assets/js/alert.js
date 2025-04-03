@@ -14,55 +14,14 @@ function revealElement(elementToCheck) {
     }
 }
 
-var userDataDiv = document.getElementById("user-data");
-hideElement(userDataDiv);
-
-var addBlogAlert = document.getElementById("added-blog");
-
-function alertplace() {
-    // checking userDataDiv
-    if (userDataDiv != null) {
-        var innerTags = userDataDiv.getElementsByTagName('p');
-        var usernameText = innerTags[0].textContent;
-        console.log(usernameText);
-        if (usernameText == "NA") {
-            var loginFailDiv = document.getElementById("login-fail");
-            revealElement(loginFailDiv);
-        }
-    }
-
-    // check for add blog alert
-    if (addBlogAlert != null) {
-        revealElement(addBlogAlert);
-    }
-}
-
-// using event listeners instead of inline js
+// add event listeners for all the alert close buttons...
 var loginSuccessCloseButton = document.querySelector('#login-success .closebtn');
-var loginFailCloseButton = document.querySelector('#login-fail .closebtn');
-var submitLoginButton = document.querySelector('#contact-form-div .form  #submit');
-var submitAddPostButton = document.getElementById("submit");
-var addBlogAlertCloseButton = document.querySelector('#added-blog .closebtn');
-
-if (addBlogAlertCloseButton) {
-    addBlogAlertCloseButton.addEventListener('click', function () {
-        this.closest('.alert').style.display = 'none';
-    })
-}
-
-if (loginFailCloseButton) {
-    loginFailCloseButton.addEventListener('click', function () {
-        this.closest('.alert').style.display = 'none';
-    })
-}
-
 if (loginSuccessCloseButton) {
     loginSuccessCloseButton.addEventListener('click', function () {
         this.closest('.alert').style.display = 'none';
         sessionStorage.setItem("loginSuccessClosed", true);
     })
 }
-
 if (sessionStorage.getItem("loginSuccessClosed")) {
     var loginSuccessDiv = document.getElementById('login-success');
     if (loginSuccessDiv) {
@@ -70,15 +29,16 @@ if (sessionStorage.getItem("loginSuccessClosed")) {
     }
 }
 
-if (submitLoginButton) {
-    submitLoginButton.addEventListener('click', function () {
-        alertplace();
+var loginFailCloseButton = document.querySelector('#login-fail .closebtn');
+if (loginFailCloseButton) {
+    loginFailCloseButton.addEventListener('click', function () {
+        this.closest('.alert').style.display = 'none';
     })
 }
 
-if (submitAddPostButton) {
-    submitAddPostButton.addEventListener('click', function () {
-        alertplace();
+var addBlogAlertCloseButton = document.querySelector('#added-blog .closebtn');
+if (addBlogAlertCloseButton) {
+    addBlogAlertCloseButton.addEventListener('click', function () {
+        this.closest('.alert').style.display = 'none';
     })
 }
-

@@ -31,14 +31,14 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
-            $title = $_POST['title'];
-            $message = $_POST['message'];
-            $user_id = $_SESSION['id'];
-            $sessionManager->addEntry($title, $message, $user_id);
-            echo '<div class="alert" id="added-blog">
-                    <span class="closebtn">&times;</span> 
-                    <p>Added blog!</p>
-                    </div>';
+            $title = $_POST['title'] ?? '';
+            $message = $_POST['message'] ?? '';
+            $user_id = $_SESSION['id'] ?? null;
+            if (!empty($_POST))
+            {
+                $sessionManager->addEntry($title, $message, $user_id);
+                echo '<div class="alert" id="added-blog"><span class="closebtn">&times;</span><p>Added blog!</p></div>';
+            } 
         }
     ?>
     <div id="contact-form-div">

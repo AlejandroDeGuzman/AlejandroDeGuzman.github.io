@@ -17,23 +17,18 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $sessionManager->login($email, $password);
-        if (isset($_SESSION["login-success"]) && $_SESSION["login-success"])
+        if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
         {
-            //echo "<br><p>Welcome " . $_SESSION["username"] . "!</p>";
-             header('Location: addPost.php');
+            header('Location: addPost.php');
+            exit();
         }
-        else
+        else if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === False)
         {
-        echo '<div class="alert" id="login-fail">
-                <span class="closebtn">&times;</span> 
-                <p><strong>Fail!</strong> Invalid details, please try again.</p>
-            </div>';
+           echo '<div class="alert" id="login-fail">
+               <span class="closebtn">&times;</span> 
+               <p><strong>Fail!</strong> Invalid details, please try again.</p>
+               </div>';
         }
-       
-        echo '<div id="user-data">
-        <p>' . htmlspecialchars($_SESSION['username'] ?? 'NA') . '</p>
-        <p>' . htmlspecialchars($_SESSION['login-success'] ?? 'NA') . '</p>
-        </div>';
     }
 ?>
     <div id="contact-form-div">

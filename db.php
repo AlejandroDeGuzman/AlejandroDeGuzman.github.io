@@ -51,6 +51,7 @@ class SessionDataManager extends MySQLDatabaseModel
     {
         // call super of abstract class
         parent::__construct($DBC);
+        
     }
 
     public function getDBC(): MySQLDatabaseConnection
@@ -77,14 +78,18 @@ class SessionDataManager extends MySQLDatabaseModel
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user) {
-            if ($password == $user["password"]) {
-                session_start();
-                $_SESSION["username"] = $user["username"];
-                $_SESSION["email"] = $user["email"];
-                $_SESSION["id"] = $user["id"];
-                $_SESSION["login-success"] = true;
-            }
-        }  
+        if ($user && $password == $user["password"]) {
+            $_SESSION["username"] = $user["username"];
+            $_SESSION["email"] = $user["email"];
+            $_SESSION["id"] = $user["id"];
+            $_SESSION["login-success"] = True;
+        } 
+        else 
+        {
+            $_SESSION["username"] = "NA";
+            $_SESSION["email"] = "NA";
+            $_SESSION["id"] = "NA";
+            $_SESSION["login-success"] = False;
+        } 
     }
 }
