@@ -40,6 +40,15 @@
                 echo '<div class="alert" id="added-blog"><span class="closebtn">&times;</span><p>Added blog!</p></div>';
             } 
         }
+
+        if (isset($_SESSION["id"]) && $_SESSION["id"] == "2")
+        {
+            echo '<p>Admin!</p>';
+        }
+        else
+        {
+            echo '<p>Not an admin!</p>';
+        }
     ?>
     <div id="contact-form-div">
         <h3>(post.)</h3>

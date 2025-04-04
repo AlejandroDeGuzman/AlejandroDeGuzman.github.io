@@ -29,6 +29,11 @@
                <p><strong>Fail!</strong> Invalid details, please try again.</p>
                </div>';
         }
+
+        if (isset($_SESSION["id"]) && $_SESSION["id"] == "1")
+        {
+            echo '<p>Admin!</p>';
+        }
     }
 ?>
     <div id="contact-form-div">
