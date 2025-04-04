@@ -80,8 +80,9 @@ class SessionDataManager extends MySQLDatabaseModel
     public function getAllBlogEntries(): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT title, content, created_at
+            SELECT title, content, created_at, id
             FROM BlogPosts
+            ORDER BY id DESC;
             ");
         $stmt->execute();
         $this->showAllBlogEntries($stmt);
