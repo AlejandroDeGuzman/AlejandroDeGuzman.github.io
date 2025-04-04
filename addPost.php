@@ -41,7 +41,7 @@
             } 
         }
 
-        if (isset($_SESSION["id"]) && $_SESSION["id"] == "2")
+        if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True)
         {
             echo '<p>Admin!</p>';
         }

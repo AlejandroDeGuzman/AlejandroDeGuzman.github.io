@@ -112,6 +112,7 @@ class SessionDataManager extends MySQLDatabaseModel
             $_SESSION["email"] = $user["email"];
             $_SESSION["id"] = $user["id"];
             $_SESSION["login-success"] = True;
+            $_SESSION["admin"] = False;
         } 
         else 
         {
@@ -119,6 +120,13 @@ class SessionDataManager extends MySQLDatabaseModel
             $_SESSION["email"] = "NA";
             $_SESSION["id"] = "NA";
             $_SESSION["login-success"] = False;
+            $_SESSION["admin"] = False;
         } 
+
+        // check for admin
+        if (isset($_SESSION["admin"]) && $_SESSION["id"] == "2")
+        {
+            $_SESSION["admin"] = True;
+        }
     }
 }
