@@ -69,9 +69,9 @@ class SessionDataManager extends MySQLDatabaseModel
             <div class="blog">
                 <div class="title-date">
                     <h3>Title: ' . htmlspecialchars($row["title"]) . '</h3> 
-                    <p>' . htmlspecialchars($row["created_at"]) . '</p>
                     <p>Author: ' . htmlspecialchars($row["username"]) . '</p>
                 </div>
+                    <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
                     <p>' . htmlspecialchars($row["content"]) . '</p>
             </div>
             ';
