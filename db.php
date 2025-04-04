@@ -61,15 +61,16 @@ class SessionDataManager extends MySQLDatabaseModel
 
     public function showAllBlogEntries($stmt): void
     {
-        $rows = $stmt->fetchAll();
+        $rows = array_reverse($stmt->fetchAll());
         foreach ($rows as $row) 
         {
             echo 
             '
             <div class="blog">
                 <div class="title-date">
-                    <h3>' . htmlspecialchars($row["title"]) . '</h3> 
+                    <h3>Title: ' . htmlspecialchars($row["title"]) . '</h3> 
                     <p>' . htmlspecialchars($row["created_at"]) . '</p>
+                    <p>Author: ' . htmlspecialchars($row["username"]) . '</p>
                 </div>
                     <p>' . htmlspecialchars($row["content"]) . '</p>
             </div>
@@ -80,9 +81,9 @@ class SessionDataManager extends MySQLDatabaseModel
     public function getAllBlogEntries(): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT title, content, created_at, id
-            FROM BlogPosts
-            ORDER BY id DESC;
+            SELECT title, content, created_at, username
+            FROM BlogPosts, UserData
+            WHERE BlogPosts.user_id = UserData.id;
             ");
         $stmt->execute();
         $this->showAllBlogEntries($stmt);
