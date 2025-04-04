@@ -64,17 +64,24 @@ class SessionDataManager extends MySQLDatabaseModel
         $rows = array_reverse($stmt->fetchAll());
         foreach ($rows as $row) 
         {
-            echo 
-            '
-            <div class="blog">
-                <div class="title-date">
-                    <h3>Title: ' . htmlspecialchars($row["title"]) . '</h3> 
-                    <p>Author: ' . htmlspecialchars($row["username"]) . '</p>
-                </div>
+
+            echo '
+                <div class="blog">
+                    <div class="title-date">
+                        <h3>Title: ' . htmlspecialchars($row["title"]) . '</h3> 
+                        <p>Author: ' . htmlspecialchars($row["username"]) . '</p>';
+
+                if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
+                    echo '<span class="closebtn">&times;</span>';
+                }
+
+                echo '</div>
                     <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
                     <p>' . htmlspecialchars($row["content"]) . '</p>
-            </div>
-            ';
+                ';
+                
+                
+            echo '</div>';
         }
     }
 

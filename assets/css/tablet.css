@@ -432,7 +432,9 @@ input {
 }
 
 .title-date {
+    margin-top: -10px;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    align-items: center;
 }
