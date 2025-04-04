@@ -394,7 +394,7 @@ input {
 
 .alert {
     text-align: left;
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 20px;
@@ -408,4 +408,26 @@ input {
 
 .closebtn {
     font-size: 50px;
+}
+
+/* blog stuff */
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem;
+    background-color: var(--primary-light);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-400);
+
+    /*aligns all the items in the center*/
+    align-items: center;
+    text-align: center;
+}
+
+.title-date {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
 }

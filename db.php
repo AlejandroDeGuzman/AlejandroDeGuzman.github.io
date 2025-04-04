@@ -51,11 +51,50 @@ class SessionDataManager extends MySQLDatabaseModel
     {
         // call super of abstract class
         parent::__construct($DBC);
+        
     }
 
     public function getDBC(): MySQLDatabaseConnection
     {
         return $this->DBC;
+    }
+
+    public function showAllBlogEntries($stmt): void
+    {
+        $rows = $stmt->fetchAll();
+        foreach ($rows as $row) 
+        {
+            echo 
+            '
+            <div class="blog">
+                <div class="title-date">
+                    <h3>' . htmlspecialchars($row["title"]) . '</h3> 
+                    <p>' . htmlspecialchars($row["created_at"]) . '</p>
+                </div>
+                    <p>' . htmlspecialchars($row["content"]) . '</p>
+            </div>
+            ';
+        }
+    }
+
+    public function getAllBlogEntries(): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            SELECT title, content, created_at, id
+            FROM BlogPosts
+            ORDER BY id DESC;
+            ");
+        $stmt->execute();
+        $this->showAllBlogEntries($stmt);
+    }
+
+    public function addEntry($title, $message, $user_id): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            INSERT INTO BlogPosts (user_id, title, content)
+            VALUES (?, ?, ?);
+            ");
+        $stmt->execute([$user_id, $title, $message]);
     }
 
     public function login($email, $password): void
@@ -68,14 +107,18 @@ class SessionDataManager extends MySQLDatabaseModel
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user) {
-            if ($password == $user["password"]) {
-                session_start();
-                $_SESSION["username"] = $user["username"];
-                $_SESSION["email"] = $user["email"];
-                $_SESSION["id"] = $user["id"];
-                $_SESSION["login-success"] = true;
-            }
-        }  
+        if ($user && $password == $user["password"]) {
+            $_SESSION["username"] = $user["username"];
+            $_SESSION["email"] = $user["email"];
+            $_SESSION["id"] = $user["id"];
+            $_SESSION["login-success"] = True;
+        } 
+        else 
+        {
+            $_SESSION["username"] = "NA";
+            $_SESSION["email"] = "NA";
+            $_SESSION["id"] = "NA";
+            $_SESSION["login-success"] = False;
+        } 
     }
 }
