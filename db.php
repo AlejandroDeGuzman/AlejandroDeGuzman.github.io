@@ -99,9 +99,9 @@ class SessionDataManager extends MySQLDatabaseModel
             if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
                 echo '<span class="closebtn">&times;</span>';
             }
-            echo    '</div>
-                <p>' . htmlspecialchars($comment["message"]) . '</p>
-            </div>
+            echo '</div>
+                <p class="blog-content">' . htmlspecialchars($comment["message"]) . '</p>
+                </div>
             ';
 
         }
