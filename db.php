@@ -77,10 +77,19 @@ class SessionDataManager extends MySQLDatabaseModel
         $stmt->execute([$blogID]);
     }
 
+    public function deleteSingleComment($commentID): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            DELETE FROM Comments 
+            WHERE id = ?; 
+            ");
+        $stmt->execute([$commentID]);
+    }
+
     public function showAllComments($blog_id): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT Comments.message, Comments.created_at, UserData.username
+            SELECT Comments.message, Comments.created_at, UserData.username, Comments.id
             FROM Comments, UserData
             WHERE Comments.BlogId = ?
             AND Comments.UserId = UserData.id
@@ -101,6 +110,9 @@ class SessionDataManager extends MySQLDatabaseModel
             }
             echo '</div>
                 <p class="blog-content">' . htmlspecialchars($comment["message"]) . '</p>
+                <article class="BlogID">
+                        ' . htmlspecialchars($comment["id"]) . '
+                </article>
                 </div>
             ';
 
