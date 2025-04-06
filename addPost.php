@@ -41,7 +41,7 @@
             } 
         }
 
-        if (isset($_SESSION["id"]) && $_SESSION["id"] == "2")
+        if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True)
         {
             echo '<p>Admin!</p>';
         }
@@ -56,7 +56,7 @@
             <h4>(add a post.)</h4>
             <div>
                 <input type="text" id="title" name="title" placeholder="Enter title" required>
-                <textarea id="message" name="message" placeholder="Write your text here..." style="height=200px" required></textarea>
+                <textarea id="message" name="message" placeholder="Write your text here..." required></textarea>
                 <input type="submit" id="submit" value="(submit.)">    
                 <input type="reset" value="(clear.)">   
             </div>

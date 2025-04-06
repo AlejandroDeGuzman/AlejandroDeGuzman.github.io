@@ -430,10 +430,90 @@ input {
     /*aligns all the items in the center*/
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .title-date {
+    margin-top: -10px;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    align-items: center;
+}
+
+.closebtn:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+.BlogID {
+    display: none;
+}
+
+.comment {
+    height: 2.5rem;
+}
+
+.comment-div {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.5rem;
+    padding: 0.2rem;
+    /* border-radius: 10px; */
+    /* background-color: var(--primary-light); */
+    /* border-left: 3px solid var(--accent-400); */
+    /* border-top: 3px solid var(--accent-400); */
+    width: 100%;
+    text-align: left;
+}
+
+.comment-div-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.3rem;
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    /* background-color: var(--gray-300); */
+    /* padding: 10px; */
+    /* border-left: 3px solid var(--accent-400); */
+    /* border-radius: 10px; */
+    width: 100%;
+    padding: 10px;
+}
+
+.comment-form {
+    all: revert;
+    /* background-color: var(--gray-300); */
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.comment-form #submit {
+    width: 30%;
+}
+
+.comment-date {
+    color: var(--gray-300);
+}
+
+.blog-content {
+    word-break: break-word;
+}
+
+.comment-closebtn {
+    font-size: 1rem;
+}
+
+.comment-closebtn:hover {
+    color: red;
+    transition: color 0.2s;
 }

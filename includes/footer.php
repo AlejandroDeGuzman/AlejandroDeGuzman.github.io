@@ -23,5 +23,6 @@
         hljs.highlightAll();
         </script>
         <script src="../assets/js/alert.js"></script>
+        <script src="../assets/js/blog.js"></script>
     </body>
 </html>
