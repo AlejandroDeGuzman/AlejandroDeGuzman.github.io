@@ -433,3 +433,12 @@ input {
     align-items: center;
     gap: 1rem;
 }
+
+.closebtn:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+.BlogID {
+    display: none;
+}

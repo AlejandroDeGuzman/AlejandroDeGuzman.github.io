@@ -438,3 +438,12 @@ input {
     gap: 1rem;
     align-items: center;
 }
+
+.closebtn:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+.BlogID {
+    display: none;
+}

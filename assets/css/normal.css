@@ -454,3 +454,7 @@ input {
     color: red;
     transition: color 0.2s;
 }
+
+.BlogID {
+    display: none;
+}

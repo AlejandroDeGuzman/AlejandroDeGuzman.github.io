@@ -59,6 +59,16 @@ class SessionDataManager extends MySQLDatabaseModel
         return $this->DBC;
     }
 
+    public function deleteBlogPost($blogID): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            DELETE FROM BlogPosts
+            WHERE id = ?; 
+            ");
+        $stmt->execute([$blogID]);
+    }
+
+
     public function showAllBlogEntries($stmt): void
     {
         $rows = array_reverse($stmt->fetchAll());
@@ -75,9 +85,12 @@ class SessionDataManager extends MySQLDatabaseModel
                     echo '<span class="closebtn">&times;</span>';
                 }
 
-                echo '</div>
+            echo '</div>
                     <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
                     <p>' . htmlspecialchars($row["content"]) . '</p>
+                    <article class="BlogID">
+                        ' . htmlspecialchars($row["id"]) . '
+                    </article>
                 ';
                 
                 
@@ -88,7 +101,7 @@ class SessionDataManager extends MySQLDatabaseModel
     public function getAllBlogEntries(): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT title, content, created_at, username
+            SELECT title, content, created_at, username, BlogPosts.id
             FROM BlogPosts, UserData
             WHERE BlogPosts.user_id = UserData.id;
             ");
