@@ -96,7 +96,7 @@ class SessionDataManager extends MySQLDatabaseModel
             ");
         $stmt->execute([$blog_id]);   
 
-        $comments = $stmt->fetchAll();
+        $comments = array_reverse($stmt->fetchAll());
         foreach ($comments as $comment) 
         {
             echo '
