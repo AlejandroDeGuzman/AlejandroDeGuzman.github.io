@@ -97,7 +97,7 @@ class SessionDataManager extends MySQLDatabaseModel
                 <p class="comment-date">' . htmlspecialchars($comment["created_at"]) . '</p>';
 
             if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
-                echo '<span class="closebtn">&times;</span>';
+                echo '<span class="comment-closebtn">&times;</span>';
             }
             echo '</div>
                 <p class="blog-content">' . htmlspecialchars($comment["message"]) . '</p>
