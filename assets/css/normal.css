@@ -440,6 +440,7 @@ input {
     /*aligns all the items in the center*/
     align-items: center;
     text-align: center;
+    width: 100%;
 }
 
 .title-date {
@@ -512,4 +513,8 @@ input {
 
 .comment-date {
     color: var(--gray-300);
+}
+
+.blog-content {
+    word-break: break-word;
 }

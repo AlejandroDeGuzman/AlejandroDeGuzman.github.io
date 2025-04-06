@@ -94,8 +94,12 @@ class SessionDataManager extends MySQLDatabaseModel
             <div class="comment-div">
                 <div class="comment-div-title">
                     <p>' . htmlspecialchars($comment["username"]) . '</p>
-                    <p class="comment-date">' . htmlspecialchars($comment["created_at"]) . '</p>
-                </div>
+                <p class="comment-date">' . htmlspecialchars($comment["created_at"]) . '</p>';
+
+            if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
+                echo '<span class="closebtn">&times;</span>';
+            }
+            echo    '</div>
                 <p>' . htmlspecialchars($comment["message"]) . '</p>
             </div>
             ';
@@ -135,8 +139,8 @@ class SessionDataManager extends MySQLDatabaseModel
             echo '
                 <div class="blog">
                     <div class="title-date">
-                        <h3>Title: ' . htmlspecialchars($row["title"]) . '</h3> 
-                        <p>Author: ' . htmlspecialchars($row["username"]) . '</p>';
+                        <h3 class="blog-content">Title: ' . htmlspecialchars($row["title"]) . '</h3> 
+                        <p class="blog-content">Author: ' . htmlspecialchars($row["username"]) . '</p>';
 
                 if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
                     echo '<span class="closebtn">&times;</span>';
@@ -144,7 +148,7 @@ class SessionDataManager extends MySQLDatabaseModel
 
             echo '</div>
                     <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
-                    <p>' . htmlspecialchars($row["content"]) . '</p>
+                    <p class="blog-content">' . htmlspecialchars($row["content"]) . '</p>
                     <article class="BlogID">
                         ' . htmlspecialchars($row["id"]) . '
                     </article>
