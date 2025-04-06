@@ -420,6 +420,7 @@ input {
     padding: 20px;
     border-radius: 10px;
     border-left: 5px solid var(--accent-400);
+    width: 100%;
 
     /*aligns all the items in the center*/
     align-items: center;
@@ -452,11 +453,12 @@ input {
     flex-direction: column;
     font-size: 0.5rem;
     padding: 0.2rem;
-    border-radius: 10px;
-    background-color: var(--primary-light);
-    border-left: 3px solid var(--accent-400);
-    border-top: 3px solid var(--accent-400);
+    /* border-radius: 10px; */
+    /* background-color: var(--primary-light); */
+    /* border-left: 3px solid var(--accent-400); */
+    /* border-top: 3px solid var(--accent-400); */
     width: 100%;
+    text-align: left;
 }
 
 .comment-div-title {
@@ -472,14 +474,27 @@ input {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 0.5rem;
-    background-color: var(--gray-300);
+    /* background-color: var(--gray-300); */
+    /* padding: 10px; */
+    /* border-left: 3px solid var(--accent-400); */
+    /* border-radius: 10px; */
+    width: 100%;
     padding: 10px;
-    border-left: 3px solid var(--accent-400);
-    border-radius: 10px;
-    width: 90%;
 }
 
 .comment-form {
-    background-color: var(-gray-300);
-    width: 40rem;
+    all: revert;
+    /* background-color: var(--gray-300); */
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.comment-form #submit {
+    width: 10%;
+}
+
+.comment-date {
+    color: var(--gray-300);
 }

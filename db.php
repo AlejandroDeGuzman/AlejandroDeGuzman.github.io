@@ -59,6 +59,15 @@ class SessionDataManager extends MySQLDatabaseModel
         return $this->DBC;
     }
 
+    public function deleteAllCommentsFromBlog($blogID): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            DELETE FROM Comments 
+            WHERE BlogId = ?; 
+            ");
+        $stmt->execute([$blogID]);
+    }
+
     public function deleteBlogPost($blogID): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
@@ -84,10 +93,10 @@ class SessionDataManager extends MySQLDatabaseModel
             echo '
             <div class="comment-div">
                 <div class="comment-div-title">
-                    <p>Username: ' . htmlspecialchars($comment["username"]) . '</p>
-                    <p>Posted: ' . htmlspecialchars($comment["created_at"]) . '</p>
+                    <p>' . htmlspecialchars($comment["username"]) . '</p>
+                    <p class="comment-date">' . htmlspecialchars($comment["created_at"]) . '</p>
                 </div>
-            <p>' . htmlspecialchars($comment["message"]) . '</p>
+                <p>' . htmlspecialchars($comment["message"]) . '</p>
             </div>
             ';
 

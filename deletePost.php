@@ -9,6 +9,7 @@ $DBC = new MySQLDatabaseConnection($host, $dbname, $user, $pass);
 $sessionManager = new SessionDataManager($DBC);
 $data = json_decode(file_get_contents('php://input'), true);
 
+$sessionManager->deleteAllCommentsFromBlog($data['id']);
 $sessionManager->deleteBlogPost($data['id']);
 ?>
 
