@@ -68,9 +68,57 @@ class SessionDataManager extends MySQLDatabaseModel
         $stmt->execute([$blogID]);
     }
 
+    public function showAllComments($blog_id): void 
+    {
+        $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            SELECT Comments.message, Comments.created_at, UserData.username
+            FROM Comments, UserData
+            WHERE Comments.BlogId = ?
+            AND Comments.UserId = UserData.id
+            ");
+        $stmt->execute([$blog_id]);   
+
+        $comments = $stmt->fetchAll();
+        foreach ($comments as $comment) 
+        {
+            echo '
+            <div class="comment-div">
+                <div class="comment-div-title">
+                    <p>Username: ' . htmlspecialchars($comment["username"]) . '</p>
+                    <p>Posted: ' . htmlspecialchars($comment["created_at"]) . '</p>
+                </div>
+            <p>' . htmlspecialchars($comment["message"]) . '</p>
+            </div>
+            ';
+
+        }
+    }
+
+    public function addComment($user_id, $blog_id, $message): void
+    {
+        if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
+        {
+            $stmt = $this->getDBC()->getPDOInstance()->prepare("
+            INSERT INTO Comments (BlogId, UserId, message)
+            VALUES (?, ?, ?);
+            ");
+            $stmt->execute([$blog_id, $user_id, $message]);
+        }
+    }
 
     public function showAllBlogEntries($stmt): void
     {
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blog_id'])) 
+        {
+            $message = $_POST['message'];
+            $blog_id = $_POST['blog_id'];
+
+            if (!empty($message))
+            {
+                $this->addComment($_SESSION["id"], $blog_id, $message);
+            }
+        }
+
         $rows = array_reverse($stmt->fetchAll());
         foreach ($rows as $row) 
         {
@@ -95,13 +143,21 @@ class SessionDataManager extends MySQLDatabaseModel
 
             if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
             {
-                echo '<textarea class="comment" type="text" placeholder="Write a comment..."></textarea>
-                <input type="submit" id="submit" value="(submit.)">    
+                echo '
+                <form class="comment-form" method="POST">
+                    <input type="hidden" name="blog_id" value="' . htmlspecialchars($row["id"]) . '">
+                    <textarea class="comment" name="message" type="text" placeholder="Write a comment..." required></textarea>
+                    <input type="submit" id="submit" value="(submit.)">    
+                </form>
                 ';
             }
-                
-                
+
+            echo '<div class="comments-section">';
+                $this->showAllComments($row["id"]);
             echo '</div>';
+
+            echo '</div>';
+            
         }
     }
 
