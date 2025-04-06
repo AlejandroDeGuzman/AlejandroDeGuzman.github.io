@@ -447,3 +447,7 @@ input {
 .BlogID {
     display: none;
 }
+
+.comment {
+    height: 2.5rem;
+}

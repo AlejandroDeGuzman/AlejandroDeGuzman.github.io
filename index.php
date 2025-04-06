@@ -178,7 +178,7 @@ String[] technologies = {
                 <input type="text" id="fname" name="firstname" placeholder="Your first name" required>
                 <input type="text" id="lname" name="lastname" placeholder="Your last name" required>
                 <input type="email" id="email" name="email" placeholder="Your email" required>   
-                <textarea id="message" name="message" placeholder="Write a message..." style="height=200px" required></textarea>
+                <textarea id="message" name="message" placeholder="Write a message..." required></textarea>
                 <input type="submit" value="(submit.)">   
                 <input type="reset" value="(clear.)">   
             </div>

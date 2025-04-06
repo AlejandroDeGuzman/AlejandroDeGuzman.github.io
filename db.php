@@ -92,6 +92,13 @@ class SessionDataManager extends MySQLDatabaseModel
                         ' . htmlspecialchars($row["id"]) . '
                     </article>
                 ';
+
+            if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
+            {
+                echo '<textarea class="comment" type="text" placeholder="Write a comment..."></textarea>
+                <input type="submit" id="submit" value="(submit.)">    
+                ';
+            }
                 
                 
             echo '</div>';
