@@ -145,7 +145,11 @@ class SessionDataManager extends MySQLDatabaseModel
         }
 
         $rowCount = $stmt->rowCount();
-        $rows = array_reverse($stmt->fetchAll());
+        // $rows = array_reverse($stmt->fetchAll());
+        $rows = $stmt->fetchAll();
+        usort($rows, function($a, $b) {
+            return strtotime($b['created_at']) - strtotime($a['created_at']);
+        });
         if ($rowCount > 0)
         {
             foreach ($rows as $row) 
