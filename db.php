@@ -14,7 +14,7 @@ class MySQLDatabaseConnection
             $this->PDOInstance = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
         } catch (PDOException $e) {
             throw new Exception("Database Connection Error!");
-            tryReconnecting();
+            $this->tryReconnecting();
         }
     }
 
@@ -49,7 +49,6 @@ class SessionDataManager extends MySQLDatabaseModel
     protected $DBC;
     public function __construct($DBC)
     {
-        // call super of abstract class
         parent::__construct($DBC);
         
     }
@@ -96,7 +95,10 @@ class SessionDataManager extends MySQLDatabaseModel
             ");
         $stmt->execute([$blog_id]);   
 
+        // reversed array to get latest comment to be at the top of the comments section
         $comments = array_reverse($stmt->fetchAll());
+
+        // loop through each record from sql query and output corresponding html
         foreach ($comments as $comment) 
         {
             echo '
@@ -110,9 +112,9 @@ class SessionDataManager extends MySQLDatabaseModel
             }
             echo '</div>
                 <p class="blog-content">' . htmlspecialchars($comment["message"]) . '</p>
-                <article class="BlogID">
-                        ' . htmlspecialchars($comment["id"]) . '
-                </article>
+                    <article class="BlogID">
+                            ' . htmlspecialchars($comment["id"]) . '
+                    </article>
                 </div>
             ';
 
@@ -133,6 +135,7 @@ class SessionDataManager extends MySQLDatabaseModel
 
     public function showAllBlogEntries($stmt): void
     {
+        // checking if the user wants to add a comment
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blog_id'])) 
         {
             $message = $_POST['message'];
@@ -145,11 +148,12 @@ class SessionDataManager extends MySQLDatabaseModel
         }
 
         $rowCount = $stmt->rowCount();
-        // $rows = array_reverse($stmt->fetchAll());
         $rows = $stmt->fetchAll();
+        // usort function used to sort records of the blog post by date
         usort($rows, function($a, $b) {
             return strtotime($b['created_at']) - strtotime($a['created_at']);
         });
+
         if ($rowCount > 0)
         {
             foreach ($rows as $row) 
@@ -172,8 +176,7 @@ class SessionDataManager extends MySQLDatabaseModel
                         </article>
                         <article class="BlogID">
                             ' . date('F') . '
-                        </article>
-                    ';
+                        </article>';
 
                 if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
                 {
@@ -186,9 +189,11 @@ class SessionDataManager extends MySQLDatabaseModel
                     ';
                 }
 
+                // comments section
                 echo '<div class="comments-section">';
                     $this->showAllComments($row["id"]);
                 echo '</div>';
+
                 echo '</div>';
             }
         }
