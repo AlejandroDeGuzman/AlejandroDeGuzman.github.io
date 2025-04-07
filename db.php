@@ -144,66 +144,87 @@ class SessionDataManager extends MySQLDatabaseModel
             }
         }
 
+        $rowCount = $stmt->rowCount();
         $rows = array_reverse($stmt->fetchAll());
-        foreach ($rows as $row) 
+        if ($rowCount > 0)
         {
-
-            echo '
-                <div class="blog">
-                    <div class="title-date">
-                        <h3 class="blog-content">Title: ' . htmlspecialchars($row["title"]) . '</h3> 
-                        <p class="blog-content">Author: ' . htmlspecialchars($row["username"]) . '</p>';
+            foreach ($rows as $row) 
+            {
+                echo '
+                    <div class="blog">
+                        <div class="title-date">
+                            <h3 class="blog-content">Title: ' . htmlspecialchars($row["title"]) . '</h3> 
+                            <p class="blog-content">Author: ' . htmlspecialchars($row["username"]) . '</p>';
 
                 if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True) {
                     echo '<span class="closebtn">&times;</span>';
                 }
 
-            echo '</div>
-                    <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
-                    <p class="blog-content">' . htmlspecialchars($row["content"]) . '</p>
-                    <article class="BlogID">
-                        ' . htmlspecialchars($row["id"]) . '
-                    </article>
-                ';
+                echo '</div>
+                        <p>Created: ' . htmlspecialchars($row["created_at"]) . '</p>
+                        <p class="blog-content">' . htmlspecialchars($row["content"]) . '</p>
+                        <article class="BlogID">
+                            ' . htmlspecialchars($row["id"]) . '
+                        </article>
+                        <article class="BlogID">
+                            ' . date('F') . '
+                        </article>
+                    ';
 
-            if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
-            {
-                echo '
-                <form class="comment-form" method="POST">
-                    <input type="hidden" name="blog_id" value="' . htmlspecialchars($row["id"]) . '">
-                    <textarea class="comment" name="message" type="text" placeholder="Write a comment..." required></textarea>
-                    <input type="submit" id="submit" value="(submit.)">    
-                </form>
-                ';
+                if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
+                {
+                    echo '
+                    <form class="comment-form" method="POST">
+                        <input type="hidden" name="blog_id" value="' . htmlspecialchars($row["id"]) . '">
+                        <textarea class="comment" name="message" type="text" placeholder="Write a comment..." required></textarea>
+                        <input type="submit" id="submit" value="(submit.)">    
+                    </form>
+                    ';
+                }
+
+                echo '<div class="comments-section">';
+                    $this->showAllComments($row["id"]);
+                echo '</div>';
+                echo '</div>';
             }
-
-            echo '<div class="comments-section">';
-                $this->showAllComments($row["id"]);
-            echo '</div>';
-
-            echo '</div>';
-            
+        }
+        else
+        {
+            echo "<h3 id='no-posts'>No Posts to be shown!</h3>";
         }
     }
 
-    public function getAllBlogEntries(): void 
+    public function getAllBlogEntries($month): void 
     {
-        $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            SELECT title, content, created_at, username, BlogPosts.id
-            FROM BlogPosts, UserData
-            WHERE BlogPosts.user_id = UserData.id;
+        if ($month != 'All')
+        {
+            $stmt = $this->getDBC()->getPDOInstance()->prepare("
+                SELECT title, content, created_at, username, BlogPosts.id, BlogPosts.month_posted
+                FROM BlogPosts, UserData
+                WHERE BlogPosts.user_id = UserData.id
+                AND BlogPosts.month_posted = ?;
             ");
-        $stmt->execute();
+            $stmt->execute([$month]);
+        } 
+        else
+        {
+            $stmt = $this->getDBC()->getPDOInstance()->prepare("
+                SELECT title, content, created_at, username, BlogPosts.id, BlogPosts.month_posted
+                FROM BlogPosts, UserData
+                WHERE BlogPosts.user_id = UserData.id;
+            ");
+            $stmt->execute();
+        }
         $this->showAllBlogEntries($stmt);
     }
 
     public function addEntry($title, $message, $user_id): void 
     {
         $stmt = $this->getDBC()->getPDOInstance()->prepare("
-            INSERT INTO BlogPosts (user_id, title, content)
-            VALUES (?, ?, ?);
+            INSERT INTO BlogPosts (user_id, title, content, month_posted)
+            VALUES (?, ?, ?, ?);
             ");
-        $stmt->execute([$user_id, $title, $message]);
+        $stmt->execute([$user_id, $title, $message, date('F')]);
     }
 
     public function login($email, $password): void
