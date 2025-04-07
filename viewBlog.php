@@ -1,5 +1,9 @@
 <?php
     require __DIR__ . '/includes/head.php'; 
+    if (!isset($_SESSION["month"])) 
+    {
+        $_SESSION["month"] = "All";
+    }
 ?>
 <section id="blog-section">
     <h3>(blog.)</h3>
