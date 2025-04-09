@@ -567,3 +567,8 @@ input {
 #no-posts {
     padding: 1rem;
 }
+
+.input-error {
+    border: 3px solid red;
+    transition: border-color 0.3s ease;
+}
