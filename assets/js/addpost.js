@@ -11,10 +11,12 @@ if (submitButton) {
                 valid = false;
             }
 
-            setTimeout(() => {
-                titleFieldInput.classList.remove("input-error");
-            }, 3000);
-
+            if (!valid) {
+                e.preventDefault();
+                setTimeout(() => {
+                    titleFieldInput.classList.remove("input-error");
+                }, 2000);
+            }
         }
 
         if (messageBlogFieldInput) {
@@ -25,9 +27,12 @@ if (submitButton) {
                 valid = false;
             }
 
-            setTimeout(() => {
-                messageBlogFieldInput.classList.remove("input-error");
-            }, 3000);
+            if (!valid) {
+                e.preventDefault();
+                setTimeout(() => {
+                    messageBlogFieldInput.classList.remove("input-error");
+                }, 2000);
+            }
         }
     });
 }
