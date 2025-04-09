@@ -1,0 +1,50 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="wFE0j_nqo2XAww_eeW6l">
+    <mxGraphModel dx="1697" dy="1260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5fAHK7z0iGvmPsy45BD-1" target="d5fAHK7z0iGvmPsy45BD-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-1" value="getAllBlogEntries()" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="410" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-5" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5fAHK7z0iGvmPsy45BD-2" target="d5fAHK7z0iGvmPsy45BD-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-7" value="0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5fAHK7z0iGvmPsy45BD-2" target="d5fAHK7z0iGvmPsy45BD-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-2" value="Is &#39;$month&#39; argument not equal to a value of &#39;All&#39;?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="560" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5fAHK7z0iGvmPsy45BD-4" target="d5fAHK7z0iGvmPsy45BD-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="710" />
+              <mxPoint x="610" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-4" value="Use corresponding SQL command to get relevant blog post data based on month it was posted in." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="585" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5fAHK7z0iGvmPsy45BD-6" target="d5fAHK7z0iGvmPsy45BD-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="710" />
+              <mxPoint x="610" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-6" value="Use corresponding SQL command to get all blog post data." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="585" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5fAHK7z0iGvmPsy45BD-10" value="Call showAllBlogEntries() method, passing in the record data as the argument." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="810" width="310" height="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
