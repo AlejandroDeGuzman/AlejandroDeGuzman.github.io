@@ -52,7 +52,7 @@
     ?>
     <div id="contact-form-div">
         <h3>(post.)</h3>
-        <form method="POST">
+        <form id="postForm" method="POST">
             <h4>(add a post.)</h4>
             <div>
                 <input type="text" id="title" name="title" placeholder="Enter title" required>

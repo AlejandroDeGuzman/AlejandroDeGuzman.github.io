@@ -25,7 +25,7 @@ var commentCloseButtons = document.querySelectorAll('.comment-div .comment-close
 if (commentCloseButtons) {
     commentCloseButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            // Remove the closest parent .blog element
+            // Remove the closest parent .comment-div element
             var commentDiv = this.closest('.comment-div');
             var commentID = commentDiv.querySelector('.BlogID').textContent;
 
@@ -38,7 +38,6 @@ if (commentCloseButtons) {
                 .then(response => {
                     if (!response.ok) throw new Error('Delete Failed');
                 })
-
 
             commentDiv.remove();
         });

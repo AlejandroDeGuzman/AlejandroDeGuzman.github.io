@@ -576,3 +576,14 @@ input {
 #no-posts {
     padding: 1rem;
 }
+
+input,
+textarea {
+    transition: border-color 0.4s ease, border-width 0.4s ease;
+}
+
+.input-error {
+    border-color: red;
+    border-width: 4px; 
+}
+
