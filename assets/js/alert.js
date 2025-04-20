@@ -40,5 +40,11 @@ var addBlogAlertCloseButton = document.querySelector('#added-blog .closebtn');
 if (addBlogAlertCloseButton) {
     addBlogAlertCloseButton.addEventListener('click', function () {
         this.closest('.alert').style.display = 'none';
+
+        // Send background request to PHP to update session
+        fetch('dismissAddBlogAlert.php', {
+            method: 'POST',
+            credentials: 'same-origin' // ensures session cookies are sent
+        });
     })
 }

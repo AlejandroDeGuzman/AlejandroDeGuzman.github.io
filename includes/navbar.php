@@ -16,7 +16,7 @@
             if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] == true)
             {
                 echo '<li><a href="logout.php">logout.</a></li>';
-                echo '<li><a href="addPost.php">post.</a></li>';
+                echo '<li><a href="addEntry.php">post.</a></li>';
             }
             else 
             {
