@@ -241,4 +241,4 @@ class SessionDataManager extends MySQLDatabaseModel
         }
     }
 }
-
+?>
