@@ -19,7 +19,14 @@
         $sessionManager->login($email, $password);
         if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === True)
         {
-            header('Location: addPost.php');
+            if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True)
+            {
+                header('Location: addPost.php');
+            }  
+            else
+            {
+                header('Location: viewBlog.php');
+            }
             exit();
         }
         else if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] === False)

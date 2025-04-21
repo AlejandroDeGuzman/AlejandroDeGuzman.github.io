@@ -16,7 +16,10 @@
             if (isset($_SESSION["login-success"]) && $_SESSION["login-success"] == true)
             {
                 echo '<li><a href="logout.php">logout.</a></li>';
-                echo '<li><a href="addEntry.php">post.</a></li>';
+                if (isset($_SESSION["admin"]) && $_SESSION["admin"] === True)
+                {
+                    echo '<li><a href="addEntry.php">post.</a></li>';
+                }
             }
             else 
             {
